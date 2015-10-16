@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.ice.viz.prototype5/src" modelPluginID="org.eclipse.ice.viz.prototype5"
+    modelName="Prototype5" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>prototype5.ecore</foreignModel>
+  <genPackages prefix="Prototype5" disposableProviderFactory="true" ecorePackage="prototype5.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="prototype5.ecore#//MeshType"/>
+    <genDataTypes ecoreDataType="prototype5.ecore#//AtomicBoolean"/>
+    <genDataTypes ecoreDataType="prototype5.ecore#//Notification"/>
+    <genDataTypes ecoreDataType="prototype5.ecore#//EContentAdapter"/>
+    <genDataTypes ecoreDataType="prototype5.ecore#//Object"/>
+    <genClasses ecoreClass="prototype5.ecore#//Face"/>
+    <genClasses ecoreClass="prototype5.ecore#//Shape"/>
+    <genClasses ecoreClass="prototype5.ecore#//Element"/>
+    <genClasses ecoreClass="prototype5.ecore#//Vertex"/>
+    <genClasses ecoreClass="prototype5.ecore#//Edge">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prototype5.ecore#//Edge/length"/>
+    </genClasses>
+    <genClasses ecoreClass="prototype5.ecore#//VizObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prototype5.ecore#//VizObject/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prototype5.ecore#//VizObject/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prototype5.ecore#//VizObject/name"/>
+      <genOperations ecoreOperation="prototype5.ecore#//VizObject/clone"/>
+      <genOperations ecoreOperation="prototype5.ecore#//VizObject/copy">
+        <genParameters ecoreParameter="prototype5.ecore#//VizObject/copy/otherObject"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="prototype5.ecore#//AbstractView">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference prototype5.ecore#//AbstractView/transformation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference prototype5.ecore#//AbstractView/previousTransformation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prototype5.ecore#//AbstractView/adapter"/>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractView/synched"/>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractView/getRepresentation"/>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractView/update">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractView/update/notification"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractView/refresh">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractView/refresh/model"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="prototype5.ecore#//IControllerFactory">
+      <genOperations ecoreOperation="prototype5.ecore#//IControllerFactory/createController">
+        <genParameters ecoreParameter="prototype5.ecore#//IControllerFactory/createController/model"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="prototype5.ecore#//EStringToEStringMap">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prototype5.ecore#//EStringToEStringMap/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prototype5.ecore#//EStringToEStringMap/value"/>
+    </genClasses>
+    <genClasses ecoreClass="prototype5.ecore#//EStringToVizObjectMap">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prototype5.ecore#//EStringToVizObjectMap/key"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference prototype5.ecore#//EStringToVizObjectMap/value"/>
+    </genClasses>
+    <genClasses ecoreClass="prototype5.ecore#//Transformation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prototype5.ecore#//Transformation/rotation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prototype5.ecore#//Transformation/scale"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prototype5.ecore#//Transformation/size"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prototype5.ecore#//Transformation/skew"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prototype5.ecore#//Transformation/translation"/>
+      <genOperations ecoreOperation="prototype5.ecore#//Transformation/setRotation">
+        <genParameters ecoreParameter="prototype5.ecore#//Transformation/setRotation/x"/>
+        <genParameters ecoreParameter="prototype5.ecore#//Transformation/setRotation/y"/>
+        <genParameters ecoreParameter="prototype5.ecore#//Transformation/setRotation/z"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//Transformation/setScale">
+        <genParameters ecoreParameter="prototype5.ecore#//Transformation/setScale/x"/>
+        <genParameters ecoreParameter="prototype5.ecore#//Transformation/setScale/y"/>
+        <genParameters ecoreParameter="prototype5.ecore#//Transformation/setScale/z"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//Transformation/setSkew">
+        <genParameters ecoreParameter="prototype5.ecore#//Transformation/setSkew/x"/>
+        <genParameters ecoreParameter="prototype5.ecore#//Transformation/setSkew/y"/>
+        <genParameters ecoreParameter="prototype5.ecore#//Transformation/setSkew/z"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//Transformation/setTranslation">
+        <genParameters ecoreParameter="prototype5.ecore#//Transformation/setTranslation/x"/>
+        <genParameters ecoreParameter="prototype5.ecore#//Transformation/setTranslation/y"/>
+        <genParameters ecoreParameter="prototype5.ecore#//Transformation/setTranslation/z"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//Transformation/clone"/>
+      <genOperations ecoreOperation="prototype5.ecore#//Transformation/copy">
+        <genParameters ecoreParameter="prototype5.ecore#//Transformation/copy/otherObject"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//Transformation/equals">
+        <genParameters ecoreParameter="prototype5.ecore#//Transformation/equals/otherObject"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="prototype5.ecore#//Point">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prototype5.ecore#//Point/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prototype5.ecore#//Point/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prototype5.ecore#//Point/z"/>
+      <genOperations ecoreOperation="prototype5.ecore#//Point/getLocation"/>
+      <genOperations ecoreOperation="prototype5.ecore#//Point/updateLocation">
+        <genParameters ecoreParameter="prototype5.ecore#//Point/updateLocation/x"/>
+        <genParameters ecoreParameter="prototype5.ecore#//Point/updateLocation/y"/>
+        <genParameters ecoreParameter="prototype5.ecore#//Point/updateLocation/z"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="prototype5.ecore#//AbstractMeshComponent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prototype5.ecore#//AbstractMeshComponent/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prototype5.ecore#//AbstractMeshComponent/updateLock"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference prototype5.ecore#//AbstractMeshComponent/entities"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference prototype5.ecore#//AbstractMeshComponent/properties"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prototype5.ecore#//AbstractMeshComponent/adapter"/>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractMeshComponent/getEntitiesByCategory">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractMeshComponent/getEntitiesByCategory/category"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractMeshComponent/getProperty">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractMeshComponent/getProperty/property"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractMeshComponent/setProperty">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractMeshComponent/setProperty/property"/>
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractMeshComponent/setProperty/value"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractMeshComponent/addEntity">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractMeshComponent/addEntity/newEntity"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractMeshComponent/removeEntity">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractMeshComponent/removeEntity/entity"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractMeshComponent/addEntityByCategory">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractMeshComponent/addEntityByCategory/newEntity"/>
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractMeshComponent/addEntityByCategory/category"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractMeshComponent/update">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractMeshComponent/update/notification"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractMeshComponent/register">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractMeshComponent/register/entity"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractMeshComponent/unregister">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractMeshComponent/unregister/entity"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="prototype5.ecore#//AbstractController">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prototype5.ecore#//AbstractController/disposed"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference prototype5.ecore#//AbstractController/model"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference prototype5.ecore#//AbstractController/view"/>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/addEntity">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractController/addEntity/newEntity"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/dispose"/>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/getEntities"/>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/getEntitiesByCategory">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractController/getEntitiesByCategory/category"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/getPreviousTransformation"/>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/getProperty">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractController/getProperty/property"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/getRepresentation"/>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/getRotation"/>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/getScale"/>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/getSize"/>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/getSkew"/>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/getTransformation"/>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/getTranslation"/>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/removeEntity">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractController/removeEntity/entity"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/setProperty">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractController/setProperty/property"/>
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractController/setProperty/value"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/setRotation">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractController/setRotation/x"/>
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractController/setRotation/y"/>
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractController/setRotation/z"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/setScale">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractController/setScale/x"/>
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractController/setScale/y"/>
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractController/setScale/z"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/setSize">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractController/setSize/newSize"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/setSkew">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractController/setSkew/x"/>
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractController/setSkew/y"/>
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractController/setSkew/z"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/setTransformation">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractController/setTransformation/newTransformation"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/setTranslation">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractController/setTranslation/x"/>
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractController/setTranslation/y"/>
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractController/setTranslation/z"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/addEntityByCategory">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractController/addEntityByCategory/newEntity"/>
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractController/addEntityByCategory/category"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/modelUpdate">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractController/modelUpdate/notification"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/viewUpdate">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractController/viewUpdate/notification"/>
+      </genOperations>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/refresh"/>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/synched"/>
+    </genClasses>
+    <genClasses ecoreClass="prototype5.ecore#//JavaFXView"/>
+    <genClasses ecoreClass="prototype5.ecore#//JavaFXMeshComponent"/>
+    <genClasses ecoreClass="prototype5.ecore#//JavaFXController"/>
+    <genClasses ecoreClass="prototype5.ecore#//JavaFXControllerFactory"/>
+    <genClasses ecoreClass="prototype5.ecore#//EdgeAndVertexFace"/>
+  </genPackages>
+</genmodel:GenModel>
