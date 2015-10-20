@@ -11,6 +11,10 @@ import org.eclipse.emf.ecore.util.EContentAdapter;
  * A representation of the model object '<em><b>Abstract View</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * The view of an AbstractMeshComponent shown to the user. The view is responsible for creating, managing, and updating the datastructure(s) which display the associated AbstractMeshComponent in the view's rendering engine's native data types. 
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -85,6 +89,9 @@ public interface AbstractView extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The adapter which is responsible for listening for updates from other objects, usually the transformation.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Adapter</em>' attribute.
 	 * @see #setAdapter(EContentAdapter)
 	 * @see prototype5.Prototype5Package#getAbstractView_Adapter()
@@ -106,6 +113,9 @@ public interface AbstractView extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Signals to the view that the graphical engine has updated to correctly render the view's current state. 
+	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
 	 */
@@ -114,6 +124,11 @@ public interface AbstractView extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Get the graphical representation of the associated model, in a data type apprioriate to the graphical engine. 
+	 * 
+	 * @return The view's graphical representation
+	 * <!-- end-model-doc -->
 	 * @model kind="operation" dataType="prototype5.Object"
 	 * @generated
 	 */
@@ -122,6 +137,11 @@ public interface AbstractView extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The function called when the view receives an update from an object it is listening to, normally its transformation.
+	 * 
+	 * @param notification The message received from the observed object
+	 * <!-- end-model-doc -->
 	 * @model notificationDataType="prototype5.Notification"
 	 * @generated
 	 */
@@ -130,6 +150,11 @@ public interface AbstractView extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Causes the view to redraw its representation, based on the model's current state.
+	 * 
+	 * @param model The view's associated model
+	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
 	 */

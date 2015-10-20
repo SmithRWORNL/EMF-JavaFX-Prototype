@@ -13,6 +13,9 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Mesh Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * An enumeration listing the allowable types of meshes. 
+ * <!-- end-model-doc -->
  * @see prototype5.Prototype5Package#getMeshType()
  * @model
  * @generated

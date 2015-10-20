@@ -100,8 +100,7 @@ public class AbstractMeshComponentImpl extends VizObjectImpl implements Abstract
 
 	/**
 	 * The default value of the '{@link #getAdapter() <em>Adapter</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getAdapter()
 	 * @generated
 	 * @ordered
@@ -231,7 +230,10 @@ public class AbstractMeshComponentImpl extends VizObjectImpl implements Abstract
 	 * Map<String, EList<VizObject>> keyed on category names.
 	 * 
 	 * @param input
+	 *            The map representing the child entities and their categories
+	 *            or properties, according to the component's type.
 	 * @param type
+	 *            The type of component the mesh represents.
 	 */
 	public AbstractMeshComponentImpl(Map<String, Object> input, MeshType type) {
 		super();
@@ -270,14 +272,12 @@ public class AbstractMeshComponentImpl extends VizObjectImpl implements Abstract
 				update(notification);
 			}
 		};
-		
+
 	}
 
 	/**
 	 * The method called whenever a registered entity in this object's map sends
-	 * a notification of a change. Implementation of this method should not
-	 * notify this object's listeners, as the notification will be passed to
-	 * them automatically.
+	 * a notification of a change. 
 	 * 
 	 * This function does nothing by default, and is intended to be overridden
 	 * by subclasses.
@@ -378,8 +378,7 @@ public class AbstractMeshComponentImpl extends VizObjectImpl implements Abstract
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EContentAdapter getAdapter() {
@@ -387,8 +386,7 @@ public class AbstractMeshComponentImpl extends VizObjectImpl implements Abstract
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setAdapter(EContentAdapter newAdapter) {
@@ -462,12 +460,12 @@ public class AbstractMeshComponentImpl extends VizObjectImpl implements Abstract
 
 			// Set the property
 			tempProperty.setValue(value);
-			
+
 			// Send notification that properties have been changed
 			if (eNotificationRequired())
-				eNotify(new ENotificationImpl(this, Notification.SET, Prototype5Package.ABSTRACT_MESH_COMPONENT__PROPERTIES,
-						prevValue, value));
-			
+				eNotify(new ENotificationImpl(this, Notification.SET,
+						Prototype5Package.ABSTRACT_MESH_COMPONENT__PROPERTIES, prevValue, value));
+
 			return;
 		}
 
@@ -553,8 +551,8 @@ public class AbstractMeshComponentImpl extends VizObjectImpl implements Abstract
 		list.add(newEntity);
 		Entry<String, EList<VizObject>> entry = new AbstractMap.SimpleEntry<String, EList<VizObject>>(category, list);
 		entities.add(entry);
-		
-		//Register with the entity
+
+		// Register with the entity
 		register(newEntity);
 
 		// Send notification that entities have been changed

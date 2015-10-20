@@ -15,6 +15,10 @@ import org.eclipse.emf.ecore.util.EContentAdapter;
  * A representation of the model object '<em><b>Abstract Mesh Component</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A component of the model. All models are built from collections of components in a hierarchical structure. A component represents some concrete entity which can be displayed inside the graphics engine.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -40,6 +44,9 @@ public interface AbstractMeshComponent extends VizObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The mesh's type, which defines how the part internally stores its data.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see prototype5.MeshType
 	 * @see #setType(MeshType)
@@ -68,6 +75,9 @@ public interface AbstractMeshComponent extends VizObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A lock for preventing concurrant writes to the mesh.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Update Lock</em>' attribute.
 	 * @see #setUpdateLock(AtomicBoolean)
 	 * @see prototype5.Prototype5Package#getAbstractMeshComponent_UpdateLock()
@@ -126,6 +136,9 @@ public interface AbstractMeshComponent extends VizObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The adapter which the component uses to listen for notifications from its child components.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Adapter</em>' attribute.
 	 * @see #setAdapter(EContentAdapter)
 	 * @see prototype5.Prototype5Package#getAbstractMeshComponent_Adapter()
@@ -147,6 +160,12 @@ public interface AbstractMeshComponent extends VizObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Get all the child entities of a given category.
+	 * 
+	 * @param category The category of entities to get.
+	 * @return A list of all child entities belonging to the specified category.
+	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
 	 */
@@ -155,6 +174,12 @@ public interface AbstractMeshComponent extends VizObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Get the given property's value.
+	 * 
+	 * @param property The property to get.
+	 * @return The specified property's value.
+	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
 	 */
@@ -163,6 +188,12 @@ public interface AbstractMeshComponent extends VizObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Set the specified property to the given value.
+	 * 
+	 * @param property The property to change
+	 * @param value The property's new value
+	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
 	 */
@@ -171,6 +202,11 @@ public interface AbstractMeshComponent extends VizObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Add a entity as a child to this one.
+	 * 
+	 * @param newEntity The new child to add
+	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
 	 */
@@ -179,6 +215,11 @@ public interface AbstractMeshComponent extends VizObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Remove the given entity from the component's children.
+	 * 
+	 * @param entity The child entity to remove
+	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
 	 */
@@ -187,6 +228,12 @@ public interface AbstractMeshComponent extends VizObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Add a new child entity to this component under the given category
+	 * 
+	 * @param newEntity The new entity to add as a child to this one
+	 * @param category The new child's category
+	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
 	 */
@@ -195,6 +242,11 @@ public interface AbstractMeshComponent extends VizObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The function called when the component receives an update from one of its children.
+	 * 
+	 * @notification The message received from the child.
+	 * <!-- end-model-doc -->
 	 * @model notificationDataType="prototype5.Notification"
 	 * @generated
 	 */
@@ -203,6 +255,11 @@ public interface AbstractMeshComponent extends VizObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Register this component as a listener to the given object.
+	 * 
+	 * @entity The object to listen to.
+	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
 	 */
@@ -211,6 +268,11 @@ public interface AbstractMeshComponent extends VizObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Unregister this component as a listener to the given object
+	 * 
+	 * @param entity The object from which updates will no longer be received.
+	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
 	 */

@@ -2,6 +2,7 @@
  */
 package prototype5.impl;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import prototype5.JavaFXController;
@@ -44,6 +45,13 @@ public class JavaFXControllerImpl extends AbstractControllerImpl implements Java
 	@Override
 	protected EClass eStaticClass() {
 		return Prototype5Package.Literals.JAVA_FX_CONTROLLER;
+	}
+	
+	@Override
+	public void modelUpdate(Notification notification){
+		view.refresh(model);
+		super.modelUpdate(notification);
+		
 	}
 
 } //JavaFXControllerImpl

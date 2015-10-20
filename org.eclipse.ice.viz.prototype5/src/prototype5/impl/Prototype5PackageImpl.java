@@ -1623,6 +1623,25 @@ public class Prototype5PackageImpl extends EPackageImpl implements Prototype5Pac
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// EAnnotation0
+		createEAnnotation0Annotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>EAnnotation0</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEAnnotation0Annotations() {
+		String source = "EAnnotation0";	
+		addAnnotation
+		  (vizObjectEClass, 
+		   source, 
+		   new String[] {
+		   });
 	}
 
 } //Prototype5PackageImpl

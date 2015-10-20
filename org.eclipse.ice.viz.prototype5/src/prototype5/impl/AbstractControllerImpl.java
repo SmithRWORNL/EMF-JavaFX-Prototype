@@ -134,10 +134,11 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 	 *            The received update from the model.
 	 */
 	public void modelUpdate(Notification notification) {
-		view.refresh(model);
-		// Nothing to do.
+
+		// Pass the notification to listeners.
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, notification.getEventType(), notification.getFeatureID(null), notification.getOldValue(), notification.getNewValue()));
+			eNotify(new ENotificationImpl(this, notification.getEventType(), notification.getFeatureID(null),
+					notification.getOldValue(), notification.getNewValue()));
 
 	}
 
@@ -153,13 +154,15 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 	 * @param notification
 	 */
 	public void viewUpdate(Notification notification) {
-		// Nothing to do.
+
+		// Pass the notification to listeners
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, notification.getEventType(), notification.getFeatureID(null), notification.getOldValue(), notification.getNewValue()));
+			eNotify(new ENotificationImpl(this, notification.getEventType(), notification.getFeatureID(null),
+					notification.getOldValue(), notification.getNewValue()));
 	}
 
 	/**
-	 * Alerts the view to refresh itself based on changes in teh model
+	 * Alerts the view to refresh itself based on changes in the model
 	 * 
 	 * @generated NOT
 	 */
@@ -168,9 +171,10 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * Informs the controller that the graphics engine's rendering of the part
+	 * has been synchronized with the controller's state.
+	 * 
+	 * @generated NOT
 	 */
 	public void synched() {
 		view.synched();
@@ -203,9 +207,9 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Prototype5Package.ABSTRACT_CONTROLLER__DISPOSED, oldDisposed, disposed));
 	}
-	
+
 	/**
-	 * Set the the controller as being disposed. 
+	 * Set the the controller as being disposed.
 	 * 
 	 * @newDisposed Whether or not the controller is disposed.
 	 */
@@ -296,7 +300,7 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 	}
 
 	/**
-	 * Dispose the controller and its resources. 
+	 * Dispose the controller and its resources.
 	 * 
 	 * @generated NOT
 	 */
@@ -310,16 +314,16 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated NOT
 	 */
 	public EList<VizObject> getEntities() {
-		//Get the map of all properties
+		// Get the map of all properties
 		EList<Entry<String, EList<VizObject>>> map = model.getEntities();
-		
-		//Combine the lists from all the map's categories
+
+		// Combine the lists from all the map's categories
 		EList<VizObject> entities = new BasicEList<VizObject>();
-		for (Entry<String, EList<VizObject>> entry : map){
+		for (Entry<String, EList<VizObject>> entry : map) {
 			entities.addAll(entry.getValue());
 		}
-		
-		//Return the combined list.
+
+		// Return the combined list.
 		return entities;
 	}
 
@@ -344,6 +348,7 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * Get the specified property's value.
+	 * 
 	 * @generated NOT
 	 * 
 	 * @property The property to get.
@@ -353,7 +358,8 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 	}
 
 	/**
-	 * Get the part's representation as an object specific to the application rendering it.
+	 * Get the part's representation as an object specific to the application
+	 * rendering it.
 	 * 
 	 * @generated NOT
 	 */
@@ -363,6 +369,7 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * Get the part's rotation in the x, y, and z directions
+	 * 
 	 * @generated NOT
 	 */
 	public EList<Double> getRotation() {
@@ -371,6 +378,7 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * Get the part's scale in the x, y, and z directions.
+	 * 
 	 * @generated NOT
 	 */
 	public EList<Double> getScale() {
@@ -379,6 +387,7 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * Get the part's size.
+	 * 
 	 * @generated NOT
 	 */
 	public double getSize() {
@@ -387,6 +396,7 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * Get the part's skew in the x, y, and z directions
+	 * 
 	 * @generated NOT
 	 */
 	public EList<Double> getSkew() {
@@ -395,6 +405,7 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * Get the part's transformation.
+	 * 
 	 * @generated NOT
 	 */
 	public Transformation getTransformation() {
@@ -403,6 +414,7 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * Get the part's translation in the x, y, and z directions
+	 * 
 	 * @generated NOT
 	 */
 	public EList<Double> getTranslation() {
@@ -411,6 +423,7 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * Remove an entity from the part's child entities.
+	 * 
 	 * @generated NOT
 	 * 
 	 * @entity The entity to be removed
@@ -421,6 +434,7 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * Set the given property to a new value
+	 * 
 	 * @generated NOT
 	 * 
 	 * @property The property to modify
@@ -432,6 +446,7 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * Set the part's rotation in the x, y, and x directions.
+	 * 
 	 * @generated NOT
 	 * 
 	 * @x The amount of x rotation to apply
@@ -444,6 +459,7 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * Set the part's scale in the x, y, and x directions.
+	 * 
 	 * @generated NOT
 	 * 
 	 * @x The part's x scale
@@ -456,6 +472,7 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * Set the part's size
+	 * 
 	 * @generated NOT
 	 * 
 	 * @newSize The new multiplier for the part's size
@@ -466,6 +483,7 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * Set the part's skew in the x, y, and x directions.
+	 * 
 	 * @generated NOT
 	 * 
 	 * @x The amount of x skew to apply
@@ -478,6 +496,7 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * Set the part's transformation
+	 * 
 	 * @generated NOT
 	 * 
 	 * @newTransformation The transformation to apply to the part.
@@ -488,6 +507,7 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * Set the part's translation in the x, y, and x directions.
+	 * 
 	 * @generated NOT
 	 * 
 	 * @x The amount of x translation to apply
@@ -503,8 +523,10 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 	 * 
 	 * @generated NOT
 	 * 
-	 * @param newEntity The child entity to be added to this part
-	 * @param category The category under which to add the new child entity
+	 * @param newEntity
+	 *            The child entity to be added to this part
+	 * @param category
+	 *            The category under which to add the new child entity
 	 */
 	public void addEntityByCategory(VizObject newEntity, String category) {
 		model.addEntityByCategory(newEntity, category);

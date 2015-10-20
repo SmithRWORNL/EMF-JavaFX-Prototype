@@ -9,6 +9,10 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Viz Object</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A class which identifies a part of a model and assigns it a series of identifiers which can be used to uniquely identify it to the user.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -31,6 +35,9 @@ public interface VizObject extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A unique numerical ID for the part.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(int)
 	 * @see prototype5.Prototype5Package#getVizObject_Id()
@@ -57,6 +64,9 @@ public interface VizObject extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A brief of the part.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see prototype5.Prototype5Package#getVizObject_Description()
@@ -83,6 +93,9 @@ public interface VizObject extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A name describing the kind of part this object represents. It should be short and human readable. 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see prototype5.Prototype5Package#getVizObject_Name()
@@ -104,6 +117,9 @@ public interface VizObject extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Create and return a new object which is a copy of this one. 
+	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
 	 */
@@ -112,6 +128,11 @@ public interface VizObject extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Deep copy the given object's data into the receiver.
+	 * 
+	 * @param otherObject The object to be copied into this one.
+	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
 	 */

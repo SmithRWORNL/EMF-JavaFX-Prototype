@@ -7,6 +7,10 @@ package prototype5;
  * A representation of the model object '<em><b>Edge</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A mesh component representing a line between two Vertices. 
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -27,6 +31,9 @@ public interface Edge extends AbstractMeshComponent {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The edge's length.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Length</em>' attribute.
 	 * @see #setLength(double)
 	 * @see prototype5.Prototype5Package#getEdge_Length()

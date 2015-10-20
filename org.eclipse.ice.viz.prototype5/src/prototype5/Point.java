@@ -9,6 +9,10 @@ import org.eclipse.emf.common.util.EList;
  * A representation of the model object '<em><b>Point</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A mesh component representing a point in three dimensional space.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -31,6 +35,9 @@ public interface Point extends AbstractMeshComponent {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The point's x axis location.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>X</em>' attribute.
 	 * @see #setX(double)
 	 * @see prototype5.Prototype5Package#getPoint_X()
@@ -57,6 +64,9 @@ public interface Point extends AbstractMeshComponent {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The point's y axis location
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Y</em>' attribute.
 	 * @see #setY(double)
 	 * @see prototype5.Prototype5Package#getPoint_Y()
@@ -83,6 +93,9 @@ public interface Point extends AbstractMeshComponent {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The point's z axis location
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Z</em>' attribute.
 	 * @see #setZ(double)
 	 * @see prototype5.Prototype5Package#getPoint_Z()
@@ -104,6 +117,11 @@ public interface Point extends AbstractMeshComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Get the point's location in three dimensional space.
+	 * 
+	 * @return A list containing the double's location in the format (x, y, z)
+	 * <!-- end-model-doc -->
 	 * @model kind="operation"
 	 * @generated
 	 */
@@ -112,6 +130,13 @@ public interface Point extends AbstractMeshComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Set's the point's location. This is a convinence method, and is equivalent to calling setX(), setY(), and setZ(), except that it fires only a single update notification.
+	 * 
+	 * @param x The point's new x location
+	 * @param y The point's new y location
+	 * @param z The point's new z location
+	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
 	 */
