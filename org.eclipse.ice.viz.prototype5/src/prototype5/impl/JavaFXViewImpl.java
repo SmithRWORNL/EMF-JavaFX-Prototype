@@ -19,8 +19,9 @@ import prototype5.Vertex;
 import prototype5.VizObject;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Java FX View</b></em>'. <!-- end-user-doc -->
+ * An AbstractView for displaying JavaFXMeshComponents in a JavaFX environment.
+ * It stores its representation as a TriangleMesh for components with MeshType
+ * VLOUMETRIC or as Shape3Ds for components with MeshType CUSTOM_PART.
  *
  * @generated
  */
@@ -43,6 +44,7 @@ public class JavaFXViewImpl extends AbstractViewImpl implements JavaFXView {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected JavaFXViewImpl() {
@@ -59,7 +61,8 @@ public class JavaFXViewImpl extends AbstractViewImpl implements JavaFXView {
 		if (type == MeshType.VOLUMETRIC) {
 
 			// The list of Edges in the model
-			EList<VizObject> originalFaces = model.getEntitiesByCategory("Faces");
+			EList<VizObject> originalFaces = model
+					.getEntitiesByCategory("Faces");
 
 			// The list of Vertex objects from the model
 			ArrayList<Vertex> originalVertices = new ArrayList<Vertex>();
@@ -72,7 +75,8 @@ public class JavaFXViewImpl extends AbstractViewImpl implements JavaFXView {
 			// arrays being represented by the value -1
 			for (VizObject face : originalFaces) {
 				Face castFace = (Face) face;
-				for (VizObject vertex : castFace.getEntitiesByCategory("Vertices")) {
+				for (VizObject vertex : castFace
+						.getEntitiesByCategory("Vertices")) {
 					Vertex castVertex = (Vertex) vertex;
 
 					// Add the vertex to the list if it is not already there
@@ -93,10 +97,12 @@ public class JavaFXViewImpl extends AbstractViewImpl implements JavaFXView {
 
 			// Convert the vertices into tuples of floats
 			for (Vertex currentVertex : originalVertices) {
-				Object[] doubleCoordinates = currentVertex.getLocation().toArray();
+				Object[] doubleCoordinates = currentVertex.getLocation()
+						.toArray();
 				float[] currentCoordinates = new float[3];
 				for (int i = 0; i < 3; i++) {
-					currentCoordinates[i] = ((Double) doubleCoordinates[i]).floatValue();
+					currentCoordinates[i] = ((Double) doubleCoordinates[i])
+							.floatValue();
 				}
 
 				for (float coordinate : currentCoordinates) {
@@ -164,7 +170,8 @@ public class JavaFXViewImpl extends AbstractViewImpl implements JavaFXView {
 
 			// For spheres, create a sphere, getting the radius from the mesh
 		} else if (type == MeshType.CUSTOM_PART) {
-			sphere = new Sphere(Double.parseDouble(model.getProperty("radius")));
+			sphere = new Sphere(
+					Double.parseDouble(model.getProperty("radius")));
 		}
 	}
 
@@ -184,6 +191,7 @@ public class JavaFXViewImpl extends AbstractViewImpl implements JavaFXView {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

@@ -18,33 +18,43 @@ import prototype5.Prototype5Package;
 import prototype5.Transformation;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Transformation</b></em>'. <!-- end-user-doc -->
- * <p>
- * The following features are implemented:
- * </p>
- * <ul>
- *   <li>{@link prototype5.impl.TransformationImpl#getRotation <em>Rotation</em>}</li>
- *   <li>{@link prototype5.impl.TransformationImpl#getScale <em>Scale</em>}</li>
- *   <li>{@link prototype5.impl.TransformationImpl#getSize <em>Size</em>}</li>
- *   <li>{@link prototype5.impl.TransformationImpl#getSkew <em>Skew</em>}</li>
- *   <li>{@link prototype5.impl.TransformationImpl#getTranslation <em>Translation</em>}</li>
- * </ul>
+ * Stores the information needed to generate a 4D affine transformation matrix
+ * given certain transformation variables. The matrix transformations are
+ * applied in the following order: skew, size, scale, rotation, and translation
+ * 
+ * @author Jay Jay Billings
+ *         <p>
+ *         The following features are implemented:
+ *         </p>
+ *         <ul>
+ *         <li>{@link prototype5.impl.TransformationImpl#getRotation
+ *         <em>Rotation</em>}</li>
+ *         <li>{@link prototype5.impl.TransformationImpl#getScale <em>Scale</em>
+ *         }</li>
+ *         <li>{@link prototype5.impl.TransformationImpl#getSize <em>Size</em>}
+ *         </li>
+ *         <li>{@link prototype5.impl.TransformationImpl#getSkew <em>Skew</em>}
+ *         </li>
+ *         <li>{@link prototype5.impl.TransformationImpl#getTranslation
+ *         <em>Translation</em>}</li>
+ *         </ul>
  *
  * @generated
  */
-public class TransformationImpl extends MinimalEObjectImpl.Container implements Transformation {
+public class TransformationImpl extends MinimalEObjectImpl.Container
+		implements Transformation {
 	/**
-	 * The cached value of the '{@link #getRotation() <em>Rotation</em>}' attribute list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Defines the rotation in radians along the x, y, and z axes passing
+	 * through the origin
+	 * 
 	 * @see #getRotation()
 	 * @generated
 	 * @ordered
 	 */
 	protected EList<Double> rotation;
 	/**
-	 * The cached value of the '{@link #getScale() <em>Scale</em>}' attribute list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Defines the scaling factors in each of the three dimensions: x, y, and z
+	 * 
 	 * @see #getScale()
 	 * @generated
 	 * @ordered
@@ -53,30 +63,31 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * The default value of the '{@link #getSize() <em>Size</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getSize()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final double SIZE_EDEFAULT = 0.0;
 	/**
-	 * The cached value of the '{@link #getSize() <em>Size</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Defines the amount of uniform scale for all three dimensions
+	 * 
 	 * @see #getSize()
 	 * @generated
 	 * @ordered
 	 */
 	protected double size = SIZE_EDEFAULT;
 	/**
-	 * The cached value of the '{@link #getSkew() <em>Skew</em>}' attribute list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The amount of skew for each of the three axes: x, y, and z
+	 * 
 	 * @see #getSkew()
 	 * @generated
 	 * @ordered
 	 */
 	protected EList<Double> skew;
 	/**
-	 * The cached value of the '{@link #getTranslation() <em>Translation</em>}' attribute list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Defines the translation along each of the three dimensions: x, y, and z
+	 * 
 	 * @see #getTranslation()
 	 * @generated
 	 * @ordered
@@ -89,16 +100,16 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
 	 * 
 	 * @generated NOT
 	 */
-	protected TransformationImpl() {
+	public TransformationImpl() {
 		super();
-		
-		//Set rotation to 0
+
+		// Set rotation to 0
 		rotation = new BasicEList<Double>();
 		rotation.add(0d);
 		rotation.add(0d);
 		rotation.add(0d);
 
-		//Set scale and size to 1
+		// Set scale and size to 1
 		scale = new BasicEList<Double>();
 		scale.add(1d);
 		scale.add(1d);
@@ -106,13 +117,13 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
 
 		size = 1d;
 
-		//Set skew to 0
+		// Set skew to 0
 		skew = new BasicEList<Double>();
 		skew.add(0d);
 		skew.add(0d);
 		skew.add(0d);
 
-		//Set translation to 0
+		// Set translation to 0
 		translation = new BasicEList<Double>();
 		translation.add(0d);
 		translation.add(0d);
@@ -121,6 +132,7 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -130,28 +142,33 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Double> getRotation() {
 		if (rotation == null) {
-			rotation = new EDataTypeUniqueEList<Double>(Double.class, this, Prototype5Package.TRANSFORMATION__ROTATION);
+			rotation = new EDataTypeUniqueEList<Double>(Double.class, this,
+					Prototype5Package.TRANSFORMATION__ROTATION);
 		}
 		return rotation;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Double> getScale() {
 		if (scale == null) {
-			scale = new EDataTypeUniqueEList<Double>(Double.class, this, Prototype5Package.TRANSFORMATION__SCALE);
+			scale = new EDataTypeUniqueEList<Double>(Double.class, this,
+					Prototype5Package.TRANSFORMATION__SCALE);
 		}
 		return scale;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getSize() {
@@ -160,33 +177,39 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setSize(double newSize) {
 		double oldSize = size;
 		size = newSize;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Prototype5Package.TRANSFORMATION__SIZE, oldSize, size));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					Prototype5Package.TRANSFORMATION__SIZE, oldSize, size));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Double> getSkew() {
 		if (skew == null) {
-			skew = new EDataTypeUniqueEList<Double>(Double.class, this, Prototype5Package.TRANSFORMATION__SKEW);
+			skew = new EDataTypeUniqueEList<Double>(Double.class, this,
+					Prototype5Package.TRANSFORMATION__SKEW);
 		}
 		return skew;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Double> getTranslation() {
 		if (translation == null) {
-			translation = new EDataTypeUniqueEList<Double>(Double.class, this, Prototype5Package.TRANSFORMATION__TRANSLATION);
+			translation = new EDataTypeUniqueEList<Double>(Double.class, this,
+					Prototype5Package.TRANSFORMATION__TRANSLATION);
 		}
 		return translation;
 	}
@@ -214,8 +237,9 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
 
 		// Notify listeners of the change in rotation
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Prototype5Package.TRANSFORMATION__ROTATION,
-					prevRotation, rotation));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					Prototype5Package.TRANSFORMATION__ROTATION, prevRotation,
+					rotation));
 	}
 
 	/**
@@ -241,8 +265,8 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
 
 		// Notify listeners of the change in scale
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Prototype5Package.TRANSFORMATION__SCALE, prevScale,
-					scale));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					Prototype5Package.TRANSFORMATION__SCALE, prevScale, scale));
 	}
 
 	/**
@@ -268,8 +292,8 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
 
 		// Notify listeners of the change in scale
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Prototype5Package.TRANSFORMATION__SKEW, prevSkew,
-					skew));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					Prototype5Package.TRANSFORMATION__SKEW, prevSkew, skew));
 	}
 
 	/**
@@ -295,7 +319,8 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
 
 		// Notify listeners of the change in scale
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Prototype5Package.TRANSFORMATION__TRANSLATION,
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					Prototype5Package.TRANSFORMATION__TRANSLATION,
 					prevTranslation, translation));
 	}
 
@@ -305,10 +330,10 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated NOT
 	 */
 	public EObject clone() {
-		//Create a new transformation and make it a copy of this one.
+		// Create a new transformation and make it a copy of this one.
 		Transformation clone = new TransformationImpl();
 		clone.copy(this);
-		
+
 		return clone;
 	}
 
@@ -317,16 +342,23 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
 	 * 
 	 * @generated NOT
 	 * 
-	 * @param otherObject The object to copy into this one.
+	 * @param otherObject
+	 *            The object to copy into this one.
 	 */
 	public void copy(Object otherObject) {
-		if (otherObject instanceof Transformation){
+		if (otherObject instanceof Transformation) {
+
+			// Cast the object
 			Transformation otherTransformation = (Transformation) otherObject;
-			rotation = new BasicEList<Double>(otherTransformation.getRotation());
+
+			// Copy the data members
+			rotation = new BasicEList<Double>(
+					otherTransformation.getRotation());
 			scale = new BasicEList<Double>(otherTransformation.getScale());
 			size = otherTransformation.getSize();
 			skew = new BasicEList<Double>(otherTransformation.getSkew());
-			translation = new BasicEList<Double>(otherTransformation.getTranslation());
+			translation = new BasicEList<Double>(
+					otherTransformation.getTranslation());
 		}
 	}
 
@@ -335,200 +367,216 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
 	 * 
 	 * @generated NOT
 	 * 
-	 * @param otherObject The object to test for equality
+	 * @param otherObject
+	 *            The object to test for equality
 	 */
 	public boolean equals(Object otherObject) {
-		
-		//If the references are the same, they are equal
-		if (this == otherObject){
+
+		// If the references are the same, they are equal
+		if (this == otherObject) {
 			return true;
 		}
-		
-		//Check that the other object is a transformation
-		if (otherObject instanceof Transformation){
+
+		// Check that the other object is a transformation
+		if (otherObject instanceof Transformation) {
 			Transformation otherTransformation = (Transformation) otherObject;
-			
-			//Check each transformation's rotation
+
+			// Check each transformation's rotation
 			EList<Double> otherRotation = otherTransformation.getRotation();
-			for(int i = 0; i < rotation.size(); i++){
-				if(Double.compare(rotation.get(i), otherRotation.get(i)) != 0){
+			for (int i = 0; i < rotation.size(); i++) {
+				if (Double.compare(rotation.get(i),
+						otherRotation.get(i)) != 0) {
 					return false;
 				}
 			}
-			
-			//Check each transformation's scale
+
+			// Check each transformation's scale
 			EList<Double> otherScale = otherTransformation.getScale();
-			for(int i = 0; i < scale.size(); i++){
-				if(Double.compare(scale.get(i), otherScale.get(i)) != 0){
+			for (int i = 0; i < scale.size(); i++) {
+				if (Double.compare(scale.get(i), otherScale.get(i)) != 0) {
 					return false;
 				}
 			}
-			
-			//Check each transformation's size
-			if(Double.compare(size, otherTransformation.getSize()) != 0){
+
+			// Check each transformation's size
+			if (Double.compare(size, otherTransformation.getSize()) != 0) {
 				return false;
 			}
-			
-			//Check each transformation's skew
+
+			// Check each transformation's skew
 			EList<Double> otherSkew = otherTransformation.getSkew();
-			for(int i = 0; i < skew.size(); i++){
-				if(Double.compare(skew.get(i), otherSkew.get(i)) != 0){
+			for (int i = 0; i < skew.size(); i++) {
+				if (Double.compare(skew.get(i), otherSkew.get(i)) != 0) {
 					return false;
 				}
 			}
-			
-			//Check each transformation's translation
-			EList<Double> otherTranslation = otherTransformation.getTranslation();
-			for(int i = 0; i < translation.size(); i++){
-				if(Double.compare(translation.get(i), otherTranslation.get(i)) != 0){
+
+			// Check each transformation's translation
+			EList<Double> otherTranslation = otherTransformation
+					.getTranslation();
+			for (int i = 0; i < translation.size(); i++) {
+				if (Double.compare(translation.get(i),
+						otherTranslation.get(i)) != 0) {
 					return false;
 				}
 			}
-			
-			//If all the checks passed, they are equal.
+
+			// If all the checks passed, they are equal.
 			return true;
 		}
-		
-		//The other object isn't a transformation, return false;
+
+		// The other object isn't a transformation, return false;
 		return false;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Prototype5Package.TRANSFORMATION__ROTATION:
-				return getRotation();
-			case Prototype5Package.TRANSFORMATION__SCALE:
-				return getScale();
-			case Prototype5Package.TRANSFORMATION__SIZE:
-				return getSize();
-			case Prototype5Package.TRANSFORMATION__SKEW:
-				return getSkew();
-			case Prototype5Package.TRANSFORMATION__TRANSLATION:
-				return getTranslation();
+		case Prototype5Package.TRANSFORMATION__ROTATION:
+			return getRotation();
+		case Prototype5Package.TRANSFORMATION__SCALE:
+			return getScale();
+		case Prototype5Package.TRANSFORMATION__SIZE:
+			return getSize();
+		case Prototype5Package.TRANSFORMATION__SKEW:
+			return getSkew();
+		case Prototype5Package.TRANSFORMATION__TRANSLATION:
+			return getTranslation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Prototype5Package.TRANSFORMATION__ROTATION:
-				getRotation().clear();
-				getRotation().addAll((Collection<? extends Double>)newValue);
-				return;
-			case Prototype5Package.TRANSFORMATION__SCALE:
-				getScale().clear();
-				getScale().addAll((Collection<? extends Double>)newValue);
-				return;
-			case Prototype5Package.TRANSFORMATION__SIZE:
-				setSize((Double)newValue);
-				return;
-			case Prototype5Package.TRANSFORMATION__SKEW:
-				getSkew().clear();
-				getSkew().addAll((Collection<? extends Double>)newValue);
-				return;
-			case Prototype5Package.TRANSFORMATION__TRANSLATION:
-				getTranslation().clear();
-				getTranslation().addAll((Collection<? extends Double>)newValue);
-				return;
+		case Prototype5Package.TRANSFORMATION__ROTATION:
+			getRotation().clear();
+			getRotation().addAll((Collection<? extends Double>) newValue);
+			return;
+		case Prototype5Package.TRANSFORMATION__SCALE:
+			getScale().clear();
+			getScale().addAll((Collection<? extends Double>) newValue);
+			return;
+		case Prototype5Package.TRANSFORMATION__SIZE:
+			setSize((Double) newValue);
+			return;
+		case Prototype5Package.TRANSFORMATION__SKEW:
+			getSkew().clear();
+			getSkew().addAll((Collection<? extends Double>) newValue);
+			return;
+		case Prototype5Package.TRANSFORMATION__TRANSLATION:
+			getTranslation().clear();
+			getTranslation().addAll((Collection<? extends Double>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Prototype5Package.TRANSFORMATION__ROTATION:
-				getRotation().clear();
-				return;
-			case Prototype5Package.TRANSFORMATION__SCALE:
-				getScale().clear();
-				return;
-			case Prototype5Package.TRANSFORMATION__SIZE:
-				setSize(SIZE_EDEFAULT);
-				return;
-			case Prototype5Package.TRANSFORMATION__SKEW:
-				getSkew().clear();
-				return;
-			case Prototype5Package.TRANSFORMATION__TRANSLATION:
-				getTranslation().clear();
-				return;
+		case Prototype5Package.TRANSFORMATION__ROTATION:
+			getRotation().clear();
+			return;
+		case Prototype5Package.TRANSFORMATION__SCALE:
+			getScale().clear();
+			return;
+		case Prototype5Package.TRANSFORMATION__SIZE:
+			setSize(SIZE_EDEFAULT);
+			return;
+		case Prototype5Package.TRANSFORMATION__SKEW:
+			getSkew().clear();
+			return;
+		case Prototype5Package.TRANSFORMATION__TRANSLATION:
+			getTranslation().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Prototype5Package.TRANSFORMATION__ROTATION:
-				return rotation != null && !rotation.isEmpty();
-			case Prototype5Package.TRANSFORMATION__SCALE:
-				return scale != null && !scale.isEmpty();
-			case Prototype5Package.TRANSFORMATION__SIZE:
-				return size != SIZE_EDEFAULT;
-			case Prototype5Package.TRANSFORMATION__SKEW:
-				return skew != null && !skew.isEmpty();
-			case Prototype5Package.TRANSFORMATION__TRANSLATION:
-				return translation != null && !translation.isEmpty();
+		case Prototype5Package.TRANSFORMATION__ROTATION:
+			return rotation != null && !rotation.isEmpty();
+		case Prototype5Package.TRANSFORMATION__SCALE:
+			return scale != null && !scale.isEmpty();
+		case Prototype5Package.TRANSFORMATION__SIZE:
+			return size != SIZE_EDEFAULT;
+		case Prototype5Package.TRANSFORMATION__SKEW:
+			return skew != null && !skew.isEmpty();
+		case Prototype5Package.TRANSFORMATION__TRANSLATION:
+			return translation != null && !translation.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments)
+			throws InvocationTargetException {
 		switch (operationID) {
-			case Prototype5Package.TRANSFORMATION___SET_ROTATION__DOUBLE_DOUBLE_DOUBLE:
-				setRotation((Double)arguments.get(0), (Double)arguments.get(1), (Double)arguments.get(2));
-				return null;
-			case Prototype5Package.TRANSFORMATION___SET_SCALE__DOUBLE_DOUBLE_DOUBLE:
-				setScale((Double)arguments.get(0), (Double)arguments.get(1), (Double)arguments.get(2));
-				return null;
-			case Prototype5Package.TRANSFORMATION___SET_SKEW__DOUBLE_DOUBLE_DOUBLE:
-				setSkew((Double)arguments.get(0), (Double)arguments.get(1), (Double)arguments.get(2));
-				return null;
-			case Prototype5Package.TRANSFORMATION___SET_TRANSLATION__DOUBLE_DOUBLE_DOUBLE:
-				setTranslation((Double)arguments.get(0), (Double)arguments.get(1), (Double)arguments.get(2));
-				return null;
-			case Prototype5Package.TRANSFORMATION___CLONE:
-				return clone();
-			case Prototype5Package.TRANSFORMATION___COPY__OBJECT:
-				copy(arguments.get(0));
-				return null;
-			case Prototype5Package.TRANSFORMATION___EQUALS__OBJECT:
-				return equals(arguments.get(0));
+		case Prototype5Package.TRANSFORMATION___SET_ROTATION__DOUBLE_DOUBLE_DOUBLE:
+			setRotation((Double) arguments.get(0), (Double) arguments.get(1),
+					(Double) arguments.get(2));
+			return null;
+		case Prototype5Package.TRANSFORMATION___SET_SCALE__DOUBLE_DOUBLE_DOUBLE:
+			setScale((Double) arguments.get(0), (Double) arguments.get(1),
+					(Double) arguments.get(2));
+			return null;
+		case Prototype5Package.TRANSFORMATION___SET_SKEW__DOUBLE_DOUBLE_DOUBLE:
+			setSkew((Double) arguments.get(0), (Double) arguments.get(1),
+					(Double) arguments.get(2));
+			return null;
+		case Prototype5Package.TRANSFORMATION___SET_TRANSLATION__DOUBLE_DOUBLE_DOUBLE:
+			setTranslation((Double) arguments.get(0), (Double) arguments.get(1),
+					(Double) arguments.get(2));
+			return null;
+		case Prototype5Package.TRANSFORMATION___CLONE:
+			return clone();
+		case Prototype5Package.TRANSFORMATION___COPY__OBJECT:
+			copy(arguments.get(0));
+			return null;
+		case Prototype5Package.TRANSFORMATION___EQUALS__OBJECT:
+			return equals(arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (rotation: ");

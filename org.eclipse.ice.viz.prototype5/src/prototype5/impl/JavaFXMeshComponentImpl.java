@@ -20,26 +20,30 @@ import prototype5.Prototype5Package;
 import prototype5.VizObject;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Java FX Mesh Component</b></em>'.
- * <!-- end-user-doc -->
+ * A mesh component which represents a single full part which is to be rendered
+ * in JavaFX.
+ * 
+ * It expects that, if it receives a list of child entities, they are to be
+ * formatted as Faces with their Vertices as children, such as in
+ * EdgeAndVertexFace.
  *
  * @generated
  */
-public class JavaFXMeshComponentImpl extends AbstractMeshComponentImpl implements JavaFXMeshComponent {
+public class JavaFXMeshComponentImpl extends AbstractMeshComponentImpl
+		implements JavaFXMeshComponent {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected JavaFXMeshComponentImpl() {
 		super();
 	}
-	
+
 	public JavaFXMeshComponentImpl(Map<String, Object> input, MeshType type) {
 		super(input, type);
 	}
-	
+
 	/**
 	 * A constructor which provides a set of child entities for the
 	 * MeshComponent.
@@ -55,21 +59,24 @@ public class JavaFXMeshComponentImpl extends AbstractMeshComponentImpl implement
 
 		// Convert the input into an Entry and add it to the map
 		BasicEList<VizObject> tempList = new BasicEList<VizObject>(entities);
-		Entry<String, EList<VizObject>> entry = new AbstractMap.SimpleEntry<String, EList<VizObject>>("Faces",
-				tempList);
+		Entry<String, EList<VizObject>> entry = new AbstractMap.SimpleEntry<String, EList<VizObject>>(
+				"Faces", tempList);
 		this.entities.add(entry);
-		
-		//For each polygon, add all vertices to the entities map under their own category
-		for(VizObject face : entities){
+
+		// For each polygon, add all vertices to the entities map under their
+		// own category
+		for (VizObject face : entities) {
 			Face castFace = (Face) face;
-			
-			//For each vertex, find the vertices category entry
-			for(VizObject vertex : castFace.getEntitiesByCategory("Vertices")){
-				for(Entry<String, EList<VizObject>> vertexEntry : this.entities){
-					if(vertexEntry.getKey() == "Vertices"){
-						
-						//If the entry does not already contain the vertex, add it.
-						if(!vertexEntry.getValue().contains(vertex)){
+
+			// For each vertex, find the vertices category entry
+			for (VizObject vertex : castFace
+					.getEntitiesByCategory("Vertices")) {
+				for (Entry<String, EList<VizObject>> vertexEntry : this.entities) {
+					if (vertexEntry.getKey() == "Vertices") {
+
+						// If the entry does not already contain the vertex, add
+						// it.
+						if (!vertexEntry.getValue().contains(vertex)) {
 							vertexEntry.getValue().add(vertex);
 						}
 					}
@@ -92,8 +99,8 @@ public class JavaFXMeshComponentImpl extends AbstractMeshComponentImpl implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -101,4 +108,4 @@ public class JavaFXMeshComponentImpl extends AbstractMeshComponentImpl implement
 		return Prototype5Package.Literals.JAVA_FX_MESH_COMPONENT;
 	}
 
-} //JavaFXMeshComponentImpl
+} // JavaFXMeshComponentImpl

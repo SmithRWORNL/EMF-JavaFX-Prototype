@@ -8,16 +8,16 @@ import prototype5.Element;
 import prototype5.Prototype5Package;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Element</b></em>'.
- * <!-- end-user-doc -->
+ * A mesh component representing a volumetric three dimensional part. It is
+ * assumed that any child entities will be the Faces, Edges, and/or Vertices
+ * which define the element.
  *
  * @generated
  */
 public class ElementImpl extends AbstractMeshComponentImpl implements Element {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ElementImpl() {
@@ -25,8 +25,8 @@ public class ElementImpl extends AbstractMeshComponentImpl implements Element {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -34,4 +34,4 @@ public class ElementImpl extends AbstractMeshComponentImpl implements Element {
 		return Prototype5Package.Literals.ELEMENT;
 	}
 
-} //ElementImpl
+} // ElementImpl

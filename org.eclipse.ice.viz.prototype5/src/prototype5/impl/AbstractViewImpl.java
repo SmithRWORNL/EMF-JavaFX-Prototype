@@ -22,24 +22,30 @@ import prototype5.Prototype5Package;
 import prototype5.Transformation;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Abstract View</b></em>'. <!-- end-user-doc -->
+ * The view of an AbstractMeshComponent shown to the user. The view is
+ * responsible for creating, managing, and updating the datastructure(s) which
+ * display the associated AbstractMeshComponent in the view's rendering engine's
+ * native data types.
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link prototype5.impl.AbstractViewImpl#getTransformation <em>Transformation</em>}</li>
- *   <li>{@link prototype5.impl.AbstractViewImpl#getPreviousTransformation <em>Previous Transformation</em>}</li>
- *   <li>{@link prototype5.impl.AbstractViewImpl#getAdapter <em>Adapter</em>}</li>
+ * <li>{@link prototype5.impl.AbstractViewImpl#getTransformation
+ * <em>Transformation</em>}</li>
+ * <li>{@link prototype5.impl.AbstractViewImpl#getPreviousTransformation
+ * <em>Previous Transformation</em>}</li>
+ * <li>{@link prototype5.impl.AbstractViewImpl#getAdapter <em>Adapter</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class AbstractViewImpl extends MinimalEObjectImpl.Container implements AbstractView {
+public class AbstractViewImpl extends MinimalEObjectImpl.Container
+		implements AbstractView {
 	/**
-	 * The cached value of the '{@link #getTransformation() <em>Transformation</em>}' reference.
-	 * <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getTransformation()
+	 * <em>Transformation</em>}' reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
+	 * 
 	 * @see #getTransformation()
 	 * @generated
 	 * @ordered
@@ -47,9 +53,10 @@ public class AbstractViewImpl extends MinimalEObjectImpl.Container implements Ab
 	protected Transformation transformation;
 
 	/**
-	 * The cached value of the '{@link #getPreviousTransformation() <em>Previous Transformation</em>}' reference.
-	 * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getPreviousTransformation()
+	 * <em>Previous Transformation</em>}' reference. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPreviousTransformation()
 	 * @generated
 	 * @ordered
@@ -57,8 +64,9 @@ public class AbstractViewImpl extends MinimalEObjectImpl.Container implements Ab
 	protected Transformation previousTransformation;
 
 	/**
-	 * The default value of the '{@link #getAdapter() <em>Adapter</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The default value of the '{@link #getAdapter() <em>Adapter</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getAdapter()
 	 * @generated
 	 * @ordered
@@ -66,8 +74,9 @@ public class AbstractViewImpl extends MinimalEObjectImpl.Container implements Ab
 	protected static final EContentAdapter ADAPTER_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getAdapter() <em>Adapter</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The adapter which is responsible for listening for updates from other
+	 * objects, usually the transformation.
+	 * 
 	 * @see #getAdapter()
 	 * @generated
 	 * @ordered
@@ -83,7 +92,7 @@ public class AbstractViewImpl extends MinimalEObjectImpl.Container implements Ab
 		super();
 		transformation = new TransformationImpl();
 		previousTransformation = new TransformationImpl();
-		
+
 		// Create an adapter set to run the update() method when a change is
 		// fired.
 		adapter = new EContentAdapter() {
@@ -92,12 +101,13 @@ public class AbstractViewImpl extends MinimalEObjectImpl.Container implements Ab
 				update(notification);
 			}
 		};
-		
+
 		register(transformation);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -107,15 +117,18 @@ public class AbstractViewImpl extends MinimalEObjectImpl.Container implements Ab
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Transformation getTransformation() {
 		if (transformation != null && transformation.eIsProxy()) {
-			InternalEObject oldTransformation = (InternalEObject)transformation;
-			transformation = (Transformation)eResolveProxy(oldTransformation);
+			InternalEObject oldTransformation = (InternalEObject) transformation;
+			transformation = (Transformation) eResolveProxy(oldTransformation);
 			if (transformation != oldTransformation) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Prototype5Package.ABSTRACT_VIEW__TRANSFORMATION, oldTransformation, transformation));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							Prototype5Package.ABSTRACT_VIEW__TRANSFORMATION,
+							oldTransformation, transformation));
 			}
 		}
 		return transformation;
@@ -123,6 +136,7 @@ public class AbstractViewImpl extends MinimalEObjectImpl.Container implements Ab
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Transformation basicGetTransformation() {
@@ -131,13 +145,16 @@ public class AbstractViewImpl extends MinimalEObjectImpl.Container implements Ab
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setTransformation(Transformation newTransformation) {
 		Transformation oldTransformation = transformation;
 		transformation = newTransformation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Prototype5Package.ABSTRACT_VIEW__TRANSFORMATION, oldTransformation, transformation));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					Prototype5Package.ABSTRACT_VIEW__TRANSFORMATION,
+					oldTransformation, transformation));
 	}
 
 	/**
@@ -147,6 +164,8 @@ public class AbstractViewImpl extends MinimalEObjectImpl.Container implements Ab
 	 *            The transformation to which this object will listen.
 	 */
 	public void register(EObject transformation) {
+
+		// Add the adapter to the transformation's list of adapters.
 		transformation.eAdapters().add(adapter);
 	}
 
@@ -158,20 +177,27 @@ public class AbstractViewImpl extends MinimalEObjectImpl.Container implements Ab
 	 *            listen.
 	 */
 	public void unregister(EObject transformation) {
+
+		// Add the adapter to the transformation's list of adapters.
 		transformation.eAdapters().remove(adapter);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Transformation getPreviousTransformation() {
-		if (previousTransformation != null && previousTransformation.eIsProxy()) {
-			InternalEObject oldPreviousTransformation = (InternalEObject)previousTransformation;
-			previousTransformation = (Transformation)eResolveProxy(oldPreviousTransformation);
+		if (previousTransformation != null
+				&& previousTransformation.eIsProxy()) {
+			InternalEObject oldPreviousTransformation = (InternalEObject) previousTransformation;
+			previousTransformation = (Transformation) eResolveProxy(
+					oldPreviousTransformation);
 			if (previousTransformation != oldPreviousTransformation) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Prototype5Package.ABSTRACT_VIEW__PREVIOUS_TRANSFORMATION, oldPreviousTransformation, previousTransformation));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							Prototype5Package.ABSTRACT_VIEW__PREVIOUS_TRANSFORMATION,
+							oldPreviousTransformation, previousTransformation));
 			}
 		}
 		return previousTransformation;
@@ -179,6 +205,7 @@ public class AbstractViewImpl extends MinimalEObjectImpl.Container implements Ab
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Transformation basicGetPreviousTransformation() {
@@ -187,13 +214,17 @@ public class AbstractViewImpl extends MinimalEObjectImpl.Container implements Ab
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public void setPreviousTransformation(Transformation newPreviousTransformation) {
+	public void setPreviousTransformation(
+			Transformation newPreviousTransformation) {
 		Transformation oldPreviousTransformation = previousTransformation;
 		previousTransformation = newPreviousTransformation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Prototype5Package.ABSTRACT_VIEW__PREVIOUS_TRANSFORMATION, oldPreviousTransformation, previousTransformation));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					Prototype5Package.ABSTRACT_VIEW__PREVIOUS_TRANSFORMATION,
+					oldPreviousTransformation, previousTransformation));
 	}
 
 	/**
@@ -242,134 +273,149 @@ public class AbstractViewImpl extends MinimalEObjectImpl.Container implements Ab
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The function called when the view receives an update from an object it is
+	 * listening to, normally its transformation.
+	 *
+	 * @param notification
+	 *            The message received from the observed object
+	 *
 	 * @generated NOT
 	 */
 	public void update(Notification notification) {
+
+		// Pass the notification up to the controller.
 		if (eNotificationRequired())
 			eNotify(notification);
 	}
 
-	
 	/**
 	 * Refreshes the representation of the model.
 	 * 
 	 * @generated NOT
 	 * 
-	 * @param model A reference to the view's model
+	 * @param model
+	 *            A reference to the view's model
 	 */
 	public void refresh(AbstractMeshComponent model) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		// Nothing to do
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Prototype5Package.ABSTRACT_VIEW__TRANSFORMATION:
-				if (resolve) return getTransformation();
-				return basicGetTransformation();
-			case Prototype5Package.ABSTRACT_VIEW__PREVIOUS_TRANSFORMATION:
-				if (resolve) return getPreviousTransformation();
-				return basicGetPreviousTransformation();
-			case Prototype5Package.ABSTRACT_VIEW__ADAPTER:
-				return getAdapter();
+		case Prototype5Package.ABSTRACT_VIEW__TRANSFORMATION:
+			if (resolve)
+				return getTransformation();
+			return basicGetTransformation();
+		case Prototype5Package.ABSTRACT_VIEW__PREVIOUS_TRANSFORMATION:
+			if (resolve)
+				return getPreviousTransformation();
+			return basicGetPreviousTransformation();
+		case Prototype5Package.ABSTRACT_VIEW__ADAPTER:
+			return getAdapter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Prototype5Package.ABSTRACT_VIEW__TRANSFORMATION:
-				setTransformation((Transformation)newValue);
-				return;
-			case Prototype5Package.ABSTRACT_VIEW__PREVIOUS_TRANSFORMATION:
-				setPreviousTransformation((Transformation)newValue);
-				return;
-			case Prototype5Package.ABSTRACT_VIEW__ADAPTER:
-				setAdapter((EContentAdapter)newValue);
-				return;
+		case Prototype5Package.ABSTRACT_VIEW__TRANSFORMATION:
+			setTransformation((Transformation) newValue);
+			return;
+		case Prototype5Package.ABSTRACT_VIEW__PREVIOUS_TRANSFORMATION:
+			setPreviousTransformation((Transformation) newValue);
+			return;
+		case Prototype5Package.ABSTRACT_VIEW__ADAPTER:
+			setAdapter((EContentAdapter) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Prototype5Package.ABSTRACT_VIEW__TRANSFORMATION:
-				setTransformation((Transformation)null);
-				return;
-			case Prototype5Package.ABSTRACT_VIEW__PREVIOUS_TRANSFORMATION:
-				setPreviousTransformation((Transformation)null);
-				return;
-			case Prototype5Package.ABSTRACT_VIEW__ADAPTER:
-				setAdapter(ADAPTER_EDEFAULT);
-				return;
+		case Prototype5Package.ABSTRACT_VIEW__TRANSFORMATION:
+			setTransformation((Transformation) null);
+			return;
+		case Prototype5Package.ABSTRACT_VIEW__PREVIOUS_TRANSFORMATION:
+			setPreviousTransformation((Transformation) null);
+			return;
+		case Prototype5Package.ABSTRACT_VIEW__ADAPTER:
+			setAdapter(ADAPTER_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Prototype5Package.ABSTRACT_VIEW__TRANSFORMATION:
-				return transformation != null;
-			case Prototype5Package.ABSTRACT_VIEW__PREVIOUS_TRANSFORMATION:
-				return previousTransformation != null;
-			case Prototype5Package.ABSTRACT_VIEW__ADAPTER:
-				return ADAPTER_EDEFAULT == null ? adapter != null : !ADAPTER_EDEFAULT.equals(adapter);
+		case Prototype5Package.ABSTRACT_VIEW__TRANSFORMATION:
+			return transformation != null;
+		case Prototype5Package.ABSTRACT_VIEW__PREVIOUS_TRANSFORMATION:
+			return previousTransformation != null;
+		case Prototype5Package.ABSTRACT_VIEW__ADAPTER:
+			return ADAPTER_EDEFAULT == null ? adapter != null
+					: !ADAPTER_EDEFAULT.equals(adapter);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments)
+			throws InvocationTargetException {
 		switch (operationID) {
-			case Prototype5Package.ABSTRACT_VIEW___SYNCHED:
-				synched();
-				return null;
-			case Prototype5Package.ABSTRACT_VIEW___GET_REPRESENTATION:
-				return getRepresentation();
-			case Prototype5Package.ABSTRACT_VIEW___UPDATE__NOTIFICATION:
-				update((Notification)arguments.get(0));
-				return null;
-			case Prototype5Package.ABSTRACT_VIEW___REFRESH__ABSTRACTMESHCOMPONENT:
-				refresh((AbstractMeshComponent)arguments.get(0));
-				return null;
+		case Prototype5Package.ABSTRACT_VIEW___SYNCHED:
+			synched();
+			return null;
+		case Prototype5Package.ABSTRACT_VIEW___GET_REPRESENTATION:
+			return getRepresentation();
+		case Prototype5Package.ABSTRACT_VIEW___UPDATE__NOTIFICATION:
+			update((Notification) arguments.get(0));
+			return null;
+		case Prototype5Package.ABSTRACT_VIEW___REFRESH__ABSTRACTMESHCOMPONENT:
+			refresh((AbstractMeshComponent) arguments.get(0));
+			return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (adapter: ");

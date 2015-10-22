@@ -92,9 +92,9 @@ public class JavaFXTutorial extends Application {
 	final double ROTATION_SPEED = 2.0;
 	final double TRACK_SPEED = 0.3;
 	TriangleMesh tri;
-	//ArrayList<Cylinder> triV;
+	// ArrayList<Cylinder> triV;
 	JavaFXController controller;
-	//JavaFXController controllerV;
+	// JavaFXController controllerV;
 	JavaFXController controllerS;
 	MeshView triView;
 
@@ -256,10 +256,10 @@ public class JavaFXTutorial extends Application {
 				if (me.isPrimaryButtonDown()) {
 					cameraXform.ry.setAngle(cameraXform.ry.getAngle()
 							- mouseDeltaX * modifierFactor * modifier
-							* ROTATION_SPEED); //
+									* ROTATION_SPEED); //
 					cameraXform.rx.setAngle(cameraXform.rx.getAngle()
 							+ mouseDeltaY * modifierFactor * modifier
-							* ROTATION_SPEED); // -
+									* ROTATION_SPEED); // -
 				} else if (me.isSecondaryButtonDown()) {
 					double z = camera.getTranslateZ();
 					double newZ = z + mouseDeltaX * MOUSE_SPEED * modifier;
@@ -296,31 +296,49 @@ public class JavaFXTutorial extends Application {
 				case V:
 					moleculeGroup.setVisible(!moleculeGroup.isVisible());
 					break;
-				case W:					
-					translation = controller.getTransformation().getTranslation();
+				case W:
+					translation = controller.getTransformation()
+							.getTranslation();
 					translation.set(0, translation.get(0) + 5);
-					controller.setTranslation(translation.get(0), translation.get(1), translation.get(2));
+					controller.setTranslation(translation.get(0),
+							translation.get(1), translation.get(2));
 					break;
 				case A:
-					translation = controller.getTransformation().getTranslation();
+					translation = controller.getTransformation()
+							.getTranslation();
 					translation.set(2, translation.get(2) - 5);
-					controller.setTranslation(translation.get(0), translation.get(1), translation.get(2));
+					controller.setTranslation(translation.get(0),
+							translation.get(1), translation.get(2));
 					break;
 				case S:
-					translation = controller.getTransformation().getTranslation();
+					translation = controller.getTransformation()
+							.getTranslation();
 					translation.set(0, translation.get(0) - 5);
-					controller.setTranslation(translation.get(0), translation.get(1), translation.get(2));
+					controller.setTranslation(translation.get(0),
+							translation.get(1), translation.get(2));
 					break;
 				case D:
-					translation = controller.getTransformation().getTranslation();
+					translation = controller.getTransformation()
+							.getTranslation();
 					translation.set(2, translation.get(2) + 5);
-					controller.setTranslation(translation.get(0), translation.get(1), translation.get(2));
+					controller.setTranslation(translation.get(0),
+							translation.get(1), translation.get(2));
 					break;
 				case R:
-					controllerS.setProperty("radius", Double.toString(Double.parseDouble(controllerS.getProperty("radius")) + 5));
+					controllerS
+							.setProperty("radius",
+									Double.toString(Double
+											.parseDouble(controllerS
+													.getProperty("radius"))
+									+ 5));
 					break;
 				case F:
-					controllerS.setProperty("radius", Double.toString(Double.parseDouble(controllerS.getProperty("radius")) - 5));
+					controllerS
+							.setProperty("radius",
+									Double.toString(Double
+											.parseDouble(controllerS
+													.getProperty("radius"))
+									- 5));
 					break;
 				} // switch
 			} // handle()
@@ -350,7 +368,8 @@ public class JavaFXTutorial extends Application {
 
 		// Create the two kinds of factories
 		IControllerFactory factory = new JavaFXControllerFactoryImpl();
-		//IControllerFactory factoryV = new JavaFXVolumetricViewControllerFactory();
+		// IControllerFactory factoryV = new
+		// JavaFXVolumetricViewControllerFactory();
 
 		// Create the vertices for the first face
 		ArrayList<Vertex> vertices = new ArrayList<Vertex>();
@@ -452,7 +471,7 @@ public class JavaFXTutorial extends Application {
 		face4.addEntity(e6);
 		face4.addEntity(e8);
 		entities.add(face4);
-		
+
 		// Create the bottom face
 		ArrayList<Vertex> vertices5 = new ArrayList<Vertex>();
 		vertices5.add(v1);
@@ -474,17 +493,19 @@ public class JavaFXTutorial extends Application {
 		entities.add(face5);
 
 		// Create the component
-		//PlantComponent model = new PlantComponent(vertices, entities);
+		// PlantComponent model = new PlantComponent(vertices, entities);
 		AbstractMeshComponent model = new JavaFXMeshComponentImpl(entities);
 
 		HashMap<String, Object> sphereProperties = new HashMap<String, Object>();
 		sphereProperties.put("radius", "25");
-		AbstractMeshComponent modelS = new JavaFXMeshComponentImpl(sphereProperties, MeshType.CUSTOM_PART);
+		AbstractMeshComponent modelS = new JavaFXMeshComponentImpl(
+				sphereProperties, MeshType.CUSTOM_PART);
 
 		// Get two controllers from the factories, one for a standard JFX mesh,
 		// and one for a volumetric mesh
 		controller = (JavaFXController) factory.createController(model);
-		//controllerV = (JavaFXController) factoryV.createViewController(model);
+		// controllerV = (JavaFXController)
+		// factoryV.createViewController(model);
 		controllerS = (JavaFXController) factory.createController(modelS);
 
 		EContentAdapter adapter = new EContentAdapter() {
@@ -493,14 +514,14 @@ public class JavaFXTutorial extends Application {
 				update(notification);
 			}
 		};
-		
-		// Register as listener to controllers		
+
+		// Register as listener to controllers
 		controller.eAdapters().add(adapter);
 		controllerS.eAdapters().add(adapter);
 
 		// Get the TriangleMesh representation of the model and add it to the
 		// scene.
-		//tri = (TriangleMesh) controller.getRepresentation();
+		// tri = (TriangleMesh) controller.getRepresentation();
 		triView = (MeshView) controller.getRepresentation();
 
 		final PhongMaterial purpleMaterial = new PhongMaterial();
@@ -511,22 +532,22 @@ public class JavaFXTutorial extends Application {
 		root.getChildren().add(triView);
 
 		// Get the cylinder representation of the edges of the mesh.
-		//triV = (ArrayList<Cylinder>) controllerV.getRepresentation();
+		// triV = (ArrayList<Cylinder>) controllerV.getRepresentation();
 
 		// Create a transformation for translating a view 150 units in the X
 		// direction and apply it to the volumetric representation
 		Transformation transform = new TransformationImpl();
 		transform.setTranslation(150, 0, 0);
-		//controllerV.setTransformation(transform);
+		// controllerV.setTransformation(transform);
 
 		// Apply the transformation and add the edges to the scene
-//		for (Cylinder edge : triV) {
-//			Transformation shapeTransform = controllerV.getTransformation();
-//			edge.setTranslateX(edge.getTranslateX()
-//					+ shapeTransform.getTranslation().get(0));
-//
-//			root.getChildren().add(edge);
-//		}
+		// for (Cylinder edge : triV) {
+		// Transformation shapeTransform = controllerV.getTransformation();
+		// edge.setTranslateX(edge.getTranslateX()
+		// + shapeTransform.getTranslation().get(0));
+		//
+		// root.getChildren().add(edge);
+		// }
 
 		// Create a transformation for translating a view 150 units in the
 		// negative x axis direction and apply it to the sphere
@@ -536,8 +557,8 @@ public class JavaFXTutorial extends Application {
 
 		Sphere sphereView = (Sphere) controllerS.getRepresentation();
 		sphereView.setMaterial(purpleMaterial);
-		sphereView
-				.setTranslateX(controllerS.getTransformation().getTranslation().get(0));
+		sphereView.setTranslateX(
+				controllerS.getTransformation().getTranslation().get(0));
 		root.getChildren().add(sphereView);
 
 		primaryStage.setTitle("Molecule Sample Application");
@@ -545,8 +566,7 @@ public class JavaFXTutorial extends Application {
 		primaryStage.show();
 		scene.setCamera(camera);
 
-		
-		//controllerS.setTransformation(transform);
+		// controllerS.setTransformation(transform);
 	}
 
 	/**
@@ -566,38 +586,43 @@ public class JavaFXTutorial extends Application {
 	 * When an update is received, redraw the movable part of the image.
 	 */
 	public void update(Notification notification) {
-		JavaFXController controller = (JavaFXController) notification.getNotifier();
+		JavaFXController controller = (JavaFXController) notification
+				.getNotifier();
 		// If the previous transformation is null, the transformation is being
 		// set for the first time and doesn't need to be updated.
 		Node node = (Node) controller.getRepresentation();
-		
-		if (!controller.getPreviousTransformation().equals(controller.getTransformation())) {
-			//Apply the difference between the current and previous translations to the edges.
-//			for (Cylinder edge : triV) {
-//				edge.setTranslateZ(edge.getTranslateZ()
-//						- controller.getPreviousTransformation().getTranslation().get(2)
-//						+ controllerV.getTransformation().getTranslation().get(2));
-//				edge.setTranslateX(edge.getTranslateX()
-//						- controller.getPreviousTransformation().getTranslation().get(0)
-//						+ controllerV.getTransformation().getTranslation().get(0));
-//			}
-//			for(int i = 0; i < tri.getFaces().size(); i = i + 3){
-//				
-//			}
-//			Transform transform = triView.getLocalToSceneTransform();
-			//transform;
-			//triView.setTranslateX(triView.getTr);
-			
+
+		if (!controller.getPreviousTransformation()
+				.equals(controller.getTransformation())) {
+			// Apply the difference between the current and previous
+			// translations to the edges.
+			// for (Cylinder edge : triV) {
+			// edge.setTranslateZ(edge.getTranslateZ()
+			// - controller.getPreviousTransformation().getTranslation().get(2)
+			// + controllerV.getTransformation().getTranslation().get(2));
+			// edge.setTranslateX(edge.getTranslateX()
+			// - controller.getPreviousTransformation().getTranslation().get(0)
+			// + controllerV.getTransformation().getTranslation().get(0));
+			// }
+			// for(int i = 0; i < tri.getFaces().size(); i = i + 3){
+			//
+			// }
+			// Transform transform = triView.getLocalToSceneTransform();
+			// transform;
+			// triView.setTranslateX(triView.getTr);
+
 			node.setTranslateZ(triView.getTranslateZ()
-			- controller.getPreviousTransformation().getTranslation().get(2)
-			+ controller.getTransformation().getTranslation().get(2));
-	node.setTranslateX(triView.getTranslateX()
-			- controller.getPreviousTransformation().getTranslation().get(0)
-			+ controller.getTransformation().getTranslation().get(0));
-	
+					- controller.getPreviousTransformation().getTranslation()
+							.get(2)
+					+ controller.getTransformation().getTranslation().get(2));
+			node.setTranslateX(triView.getTranslateX()
+					- controller.getPreviousTransformation().getTranslation()
+							.get(0)
+					+ controller.getTransformation().getTranslation().get(0));
+
 			controller.refresh();
 			controller.synched();
-			
+
 		}
 	}
 }

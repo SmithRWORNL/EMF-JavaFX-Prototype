@@ -202,6 +202,9 @@
       </genOperations>
       <genOperations ecoreOperation="prototype5.ecore#//AbstractController/refresh"/>
       <genOperations ecoreOperation="prototype5.ecore#//AbstractController/synched"/>
+      <genOperations ecoreOperation="prototype5.ecore#//AbstractController/setDisposed">
+        <genParameters ecoreParameter="prototype5.ecore#//AbstractController/setDisposed/disposed"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="prototype5.ecore#//JavaFXView"/>
     <genClasses ecoreClass="prototype5.ecore#//JavaFXMeshComponent"/>

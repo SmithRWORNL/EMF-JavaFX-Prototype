@@ -328,6 +328,7 @@
     <eOperations name="addEntity">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Adds a child entity to the part.&#xD;&#xA;&#xD;&#xA;@param newEntity The entity to add as a child."/>
+        <details key="body" value=""/>
       </eAnnotations>
       <eParameters name="newEntity" eType="#//VizObject"/>
     </eOperations>
@@ -460,12 +461,14 @@
     <eOperations name="modelUpdate">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A function called whenever the controller receives an update from the model.&#xD;&#xA;&#xD;&#xA;@param notification The message received from the model."/>
+        <details key="body" value=""/>
       </eAnnotations>
       <eParameters name="notification" eType="#//Notification"/>
     </eOperations>
     <eOperations name="viewUpdate">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The function called whenever the controlelr receives an update from the view.&#xD;&#xA;&#xD;&#xA;@param notification The message received from the view."/>
+        <details key="body" value="&#x9;&#x9;// Pass the notification to listeners&#xD;&#xA;&#x9;&#x9;if (eNotificationRequired())&#xD;&#xA;&#x9;&#x9;&#x9;eNotify(new ENotificationImpl(this, notification.getEventType(), notification.getFeatureID(null),&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;notification.getOldValue(), notification.getNewValue()));"/>
       </eAnnotations>
       <eParameters name="notification" eType="#//Notification"/>
     </eOperations>
@@ -478,6 +481,9 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Signals to the part that the graphical engine has finished rendering it. The part's current transformation should be applied before this function is called, so that the previous transformation can be reset."/>
       </eAnnotations>
+    </eOperations>
+    <eOperations name="setDisposed">
+      <eParameters name="disposed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="disposed" eType="#//AtomicBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

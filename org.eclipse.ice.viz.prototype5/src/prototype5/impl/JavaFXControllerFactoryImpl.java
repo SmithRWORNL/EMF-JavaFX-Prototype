@@ -19,25 +19,25 @@ import prototype5.JavaFXView;
 import prototype5.Prototype5Package;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Java FX Controller Factory</b></em>'.
- * <!-- end-user-doc -->
+ * An implementation of IControllerFactory for use with the JavaFX geometry
+ * editor. It takes as input a JavaFXMeshComponent
  *
  * @generated
  */
-public class JavaFXControllerFactoryImpl extends MinimalEObjectImpl.Container implements JavaFXControllerFactory {
+public class JavaFXControllerFactoryImpl extends MinimalEObjectImpl.Container
+		implements JavaFXControllerFactory {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	protected JavaFXControllerFactoryImpl() {
+	public JavaFXControllerFactoryImpl() {
 		super();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -47,7 +47,9 @@ public class JavaFXControllerFactoryImpl extends MinimalEObjectImpl.Container im
 
 	/*
 	 * (non-Javadoc)
-	 * @see prototype5.IControllerFactory#createController(prototype5.AbstractMeshComponent)
+	 * 
+	 * @see prototype5.IControllerFactory#createController(prototype5.
+	 * AbstractMeshComponent)
 	 */
 	public AbstractController createController(AbstractMeshComponent model) {
 		JavaFXController controller = null;
@@ -55,23 +57,25 @@ public class JavaFXControllerFactoryImpl extends MinimalEObjectImpl.Container im
 		// If the model is a PlantComponent, create the view and controller.
 		if (model instanceof JavaFXMeshComponent) {
 			JavaFXView view = new JavaFXViewImpl((JavaFXMeshComponent) model);
-			controller = new JavaFXControllerImpl((JavaFXMeshComponent) model, view);
+			controller = new JavaFXControllerImpl((JavaFXMeshComponent) model,
+					view);
 		}
 		return controller;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments)
+			throws InvocationTargetException {
 		switch (operationID) {
-			case Prototype5Package.JAVA_FX_CONTROLLER_FACTORY___CREATE_CONTROLLER__ABSTRACTMESHCOMPONENT:
-				return createController((AbstractMeshComponent)arguments.get(0));
+		case Prototype5Package.JAVA_FX_CONTROLLER_FACTORY___CREATE_CONTROLLER__ABSTRACTMESHCOMPONENT:
+			return createController((AbstractMeshComponent) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
-} //JavaFXControllerFactoryImpl
+} // JavaFXControllerFactoryImpl

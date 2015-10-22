@@ -14,24 +14,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import prototype5.Prototype5Package;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>EString To EString Map</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>EString To EString Map</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link prototype5.impl.EStringToEStringMapImpl#getTypedKey <em>Key</em>}</li>
- *   <li>{@link prototype5.impl.EStringToEStringMapImpl#getTypedValue <em>Value</em>}</li>
+ * <li>{@link prototype5.impl.EStringToEStringMapImpl#getTypedKey <em>Key</em>}
+ * </li>
+ * <li>{@link prototype5.impl.EStringToEStringMapImpl#getTypedValue
+ * <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EStringToEStringMapImpl extends MinimalEObjectImpl.Container implements BasicEMap.Entry<String,String> {
+public class EStringToEStringMapImpl extends MinimalEObjectImpl.Container
+		implements BasicEMap.Entry<String, String> {
 	/**
 	 * The default value of the '{@link #getTypedKey() <em>Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getTypedKey()
 	 * @generated
 	 * @ordered
@@ -40,8 +42,8 @@ public class EStringToEStringMapImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * The cached value of the '{@link #getTypedKey() <em>Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getTypedKey()
 	 * @generated
 	 * @ordered
@@ -49,9 +51,9 @@ public class EStringToEStringMapImpl extends MinimalEObjectImpl.Container implem
 	protected String key = KEY_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTypedValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getTypedValue() <em>Value</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getTypedValue()
 	 * @generated
 	 * @ordered
@@ -59,9 +61,9 @@ public class EStringToEStringMapImpl extends MinimalEObjectImpl.Container implem
 	protected static final String VALUE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getTypedValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getTypedValue() <em>Value</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getTypedValue()
 	 * @generated
 	 * @ordered
@@ -69,8 +71,8 @@ public class EStringToEStringMapImpl extends MinimalEObjectImpl.Container implem
 	protected String value = VALUE_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EStringToEStringMapImpl() {
@@ -78,8 +80,8 @@ public class EStringToEStringMapImpl extends MinimalEObjectImpl.Container implem
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -88,8 +90,8 @@ public class EStringToEStringMapImpl extends MinimalEObjectImpl.Container implem
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getTypedKey() {
@@ -97,20 +99,22 @@ public class EStringToEStringMapImpl extends MinimalEObjectImpl.Container implem
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setTypedKey(String newKey) {
 		String oldKey = key;
 		key = newKey;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Prototype5Package.ESTRING_TO_ESTRING_MAP__KEY, oldKey, key));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					Prototype5Package.ESTRING_TO_ESTRING_MAP__KEY, oldKey,
+					key));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getTypedValue() {
@@ -118,20 +122,22 @@ public class EStringToEStringMapImpl extends MinimalEObjectImpl.Container implem
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setTypedValue(String newValue) {
 		String oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Prototype5Package.ESTRING_TO_ESTRING_MAP__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					Prototype5Package.ESTRING_TO_ESTRING_MAP__VALUE, oldValue,
+					value));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getKey() {
@@ -139,8 +145,8 @@ public class EStringToEStringMapImpl extends MinimalEObjectImpl.Container implem
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setKey(String key) {
@@ -148,8 +154,8 @@ public class EStringToEStringMapImpl extends MinimalEObjectImpl.Container implem
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getValue() {
@@ -157,8 +163,8 @@ public class EStringToEStringMapImpl extends MinimalEObjectImpl.Container implem
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String setValue(String value) {
@@ -168,92 +174,96 @@ public class EStringToEStringMapImpl extends MinimalEObjectImpl.Container implem
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	public EMap<String, String> getEMap() {
 		EObject container = eContainer();
-		return container == null ? null : (EMap<String, String>)container.eGet(eContainmentFeature());
+		return container == null ? null
+				: (EMap<String, String>) container.eGet(eContainmentFeature());
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Prototype5Package.ESTRING_TO_ESTRING_MAP__KEY:
-				return getTypedKey();
-			case Prototype5Package.ESTRING_TO_ESTRING_MAP__VALUE:
-				return getTypedValue();
+		case Prototype5Package.ESTRING_TO_ESTRING_MAP__KEY:
+			return getTypedKey();
+		case Prototype5Package.ESTRING_TO_ESTRING_MAP__VALUE:
+			return getTypedValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Prototype5Package.ESTRING_TO_ESTRING_MAP__KEY:
-				setTypedKey((String)newValue);
-				return;
-			case Prototype5Package.ESTRING_TO_ESTRING_MAP__VALUE:
-				setTypedValue((String)newValue);
-				return;
+		case Prototype5Package.ESTRING_TO_ESTRING_MAP__KEY:
+			setTypedKey((String) newValue);
+			return;
+		case Prototype5Package.ESTRING_TO_ESTRING_MAP__VALUE:
+			setTypedValue((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Prototype5Package.ESTRING_TO_ESTRING_MAP__KEY:
-				setTypedKey(KEY_EDEFAULT);
-				return;
-			case Prototype5Package.ESTRING_TO_ESTRING_MAP__VALUE:
-				setTypedValue(VALUE_EDEFAULT);
-				return;
+		case Prototype5Package.ESTRING_TO_ESTRING_MAP__KEY:
+			setTypedKey(KEY_EDEFAULT);
+			return;
+		case Prototype5Package.ESTRING_TO_ESTRING_MAP__VALUE:
+			setTypedValue(VALUE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Prototype5Package.ESTRING_TO_ESTRING_MAP__KEY:
-				return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
-			case Prototype5Package.ESTRING_TO_ESTRING_MAP__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+		case Prototype5Package.ESTRING_TO_ESTRING_MAP__KEY:
+			return KEY_EDEFAULT == null ? key != null
+					: !KEY_EDEFAULT.equals(key);
+		case Prototype5Package.ESTRING_TO_ESTRING_MAP__VALUE:
+			return VALUE_EDEFAULT == null ? value != null
+					: !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (key: ");
@@ -265,15 +275,15 @@ public class EStringToEStringMapImpl extends MinimalEObjectImpl.Container implem
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected int hash = -1;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getHash() {
@@ -285,12 +295,12 @@ public class EStringToEStringMapImpl extends MinimalEObjectImpl.Container implem
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setHash(int hash) {
 		this.hash = hash;
 	}
 
-} //EStringToEStringMapImpl
+} // EStringToEStringMapImpl

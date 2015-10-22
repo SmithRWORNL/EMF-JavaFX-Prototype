@@ -16,9 +16,7 @@ import prototype5.Point;
 import prototype5.Prototype5Package;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Point</b></em>'.
- * <!-- end-user-doc -->
+ * A mesh component representing a point in three dimensional space.
  * <p>
  * The following features are implemented:
  * </p>
@@ -42,9 +40,7 @@ public class PointImpl extends AbstractMeshComponentImpl implements Point {
 	protected static final double X_EDEFAULT = 0.0;
 
 	/**
-	 * The cached value of the '{@link #getX() <em>X</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The point's x axis location.
 	 * @see #getX()
 	 * @generated
 	 * @ordered
@@ -62,9 +58,7 @@ public class PointImpl extends AbstractMeshComponentImpl implements Point {
 	protected static final double Y_EDEFAULT = 0.0;
 
 	/**
-	 * The cached value of the '{@link #getY() <em>Y</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The point's y axis location.
 	 * @see #getY()
 	 * @generated
 	 * @ordered
@@ -82,9 +76,7 @@ public class PointImpl extends AbstractMeshComponentImpl implements Point {
 	protected static final double Z_EDEFAULT = 0.0;
 
 	/**
-	 * The cached value of the '{@link #getZ() <em>Z</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The point's z axis location.
 	 * @see #getZ()
 	 * @generated
 	 * @ordered
@@ -100,6 +92,13 @@ public class PointImpl extends AbstractMeshComponentImpl implements Point {
 		super();
 	}
 	
+	/**
+	 * The basic constructor, initializing the point's location.
+	 * 
+	 * @param x The point's location along the x axis
+	 * @param y The point's location along the y axis
+	 * @param z The point's location along the z axis
+	 */
 	public PointImpl(double x, double y, double z){
 		super();
 		this.x = x;
@@ -118,8 +117,8 @@ public class PointImpl extends AbstractMeshComponentImpl implements Point {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getX() {

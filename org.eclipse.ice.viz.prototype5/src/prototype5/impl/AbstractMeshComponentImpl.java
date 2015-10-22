@@ -28,17 +28,23 @@ import prototype5.Prototype5Package;
 import prototype5.VizObject;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Abstract Mesh Component</b></em>'. <!-- end-user-doc -->
- * <p>
+ * A component of the model. All models are built from collections of components
+ * in a hierarchical structure. A component represents some concrete entity
+ * which can be displayed inside the graphics engine.
+ * 
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link prototype5.impl.AbstractMeshComponentImpl#getType <em>Type</em>}</li>
- *   <li>{@link prototype5.impl.AbstractMeshComponentImpl#getUpdateLock <em>Update Lock</em>}</li>
- *   <li>{@link prototype5.impl.AbstractMeshComponentImpl#getEntities <em>Entities</em>}</li>
- *   <li>{@link prototype5.impl.AbstractMeshComponentImpl#getProperties <em>Properties</em>}</li>
- *   <li>{@link prototype5.impl.AbstractMeshComponentImpl#getAdapter <em>Adapter</em>}</li>
+ * <li>{@link prototype5.impl.AbstractMeshComponentImpl#getType <em>Type</em>}
+ * </li>
+ * <li>{@link prototype5.impl.AbstractMeshComponentImpl#getUpdateLock
+ * <em>Update Lock</em>}</li>
+ * <li>{@link prototype5.impl.AbstractMeshComponentImpl#getEntities
+ * <em>Entities</em>}</li>
+ * <li>{@link prototype5.impl.AbstractMeshComponentImpl#getProperties
+ * <em>Properties</em>}</li>
+ * <li>{@link prototype5.impl.AbstractMeshComponentImpl#getAdapter
+ * <em>Adapter</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +53,7 @@ public class AbstractMeshComponentImpl extends VizObjectImpl implements Abstract
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -54,17 +61,17 @@ public class AbstractMeshComponentImpl extends VizObjectImpl implements Abstract
 	protected static final MeshType TYPE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getType()
+	 * The mesh's type, which defines how the part internally stores its data.
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	protected MeshType type = TYPE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getUpdateLock() <em>Update Lock</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The default value of the '{@link #getUpdateLock() <em>Update Lock</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getUpdateLock()
 	 * @generated
 	 * @ordered
@@ -72,17 +79,17 @@ public class AbstractMeshComponentImpl extends VizObjectImpl implements Abstract
 	protected static final AtomicBoolean UPDATE_LOCK_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getUpdateLock() <em>Update Lock</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getUpdateLock()
+	 * A lock for preventing concurrant writes to the mesh.
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	protected AtomicBoolean updateLock = UPDATE_LOCK_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getEntities() <em>Entities</em>}' reference list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getEntities() <em>Entities</em>}'
+	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getEntities()
 	 * @generated
 	 * @ordered
@@ -90,8 +97,9 @@ public class AbstractMeshComponentImpl extends VizObjectImpl implements Abstract
 	protected EList<Map.Entry<String, EList<VizObject>>> entities;
 
 	/**
-	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' reference list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getProperties() <em>Properties</em>}'
+	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getProperties()
 	 * @generated
 	 * @ordered
@@ -99,14 +107,22 @@ public class AbstractMeshComponentImpl extends VizObjectImpl implements Abstract
 	protected EList<Map.Entry<String, String>> properties;
 
 	/**
-	 * The default value of the '{@link #getAdapter() <em>Adapter</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The default value of the '{@link #getAdapter() <em>Adapter</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getAdapter()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final EContentAdapter ADAPTER_EDEFAULT = null;
 
+	/**
+	 * The adapter which the component uses to listen for notifications from its
+	 * child components.
+	 * 
+	 * @generated
+	 * @ordered
+	 */
 	protected EContentAdapter adapter;
 
 	/**
@@ -169,11 +185,10 @@ public class AbstractMeshComponentImpl extends VizObjectImpl implements Abstract
 		// Create a list of entities
 		this.entities = new BasicEList<Entry<String, EList<VizObject>>>();
 
-		// Convert the input into an Entry and add it to the map
-		BasicEList<VizObject> tempList = new BasicEList<VizObject>(entities);
-		Entry<String, EList<VizObject>> entry = new AbstractMap.SimpleEntry<String, EList<VizObject>>("Default",
-				tempList);
-		this.entities.add(entry);
+		// Add the input into the map of entities
+		for (VizObject entity : entities){
+			addEntity(entity);
+		}
 
 		// Instantiate the class variables
 		properties = new BasicEList<Entry<String, String>>();
@@ -277,7 +292,7 @@ public class AbstractMeshComponentImpl extends VizObjectImpl implements Abstract
 
 	/**
 	 * The method called whenever a registered entity in this object's map sends
-	 * a notification of a change. 
+	 * a notification of a change.
 	 * 
 	 * This function does nothing by default, and is intended to be overridden
 	 * by subclasses.
@@ -310,6 +325,7 @@ public class AbstractMeshComponentImpl extends VizObjectImpl implements Abstract
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -319,6 +335,7 @@ public class AbstractMeshComponentImpl extends VizObjectImpl implements Abstract
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public MeshType getType() {
@@ -327,17 +344,20 @@ public class AbstractMeshComponentImpl extends VizObjectImpl implements Abstract
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setType(MeshType newType) {
 		MeshType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Prototype5Package.ABSTRACT_MESH_COMPONENT__TYPE, oldType, type));
+			eNotify(new ENotificationImpl(this, Notification.SET, Prototype5Package.ABSTRACT_MESH_COMPONENT__TYPE,
+					oldType, type));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public AtomicBoolean getUpdateLock() {
@@ -346,39 +366,46 @@ public class AbstractMeshComponentImpl extends VizObjectImpl implements Abstract
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setUpdateLock(AtomicBoolean newUpdateLock) {
 		AtomicBoolean oldUpdateLock = updateLock;
 		updateLock = newUpdateLock;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Prototype5Package.ABSTRACT_MESH_COMPONENT__UPDATE_LOCK, oldUpdateLock, updateLock));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					Prototype5Package.ABSTRACT_MESH_COMPONENT__UPDATE_LOCK, oldUpdateLock, updateLock));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Map.Entry<String, EList<VizObject>>> getEntities() {
 		if (entities == null) {
-			entities = new EObjectResolvingEList<Map.Entry<String, EList<VizObject>>>(Entry.class, this, Prototype5Package.ABSTRACT_MESH_COMPONENT__ENTITIES);
+			entities = new EObjectResolvingEList<Map.Entry<String, EList<VizObject>>>(Entry.class, this,
+					Prototype5Package.ABSTRACT_MESH_COMPONENT__ENTITIES);
 		}
 		return entities;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Map.Entry<String, String>> getProperties() {
 		if (properties == null) {
-			properties = new EObjectResolvingEList<Map.Entry<String, String>>(Entry.class, this, Prototype5Package.ABSTRACT_MESH_COMPONENT__PROPERTIES);
+			properties = new EObjectResolvingEList<Map.Entry<String, String>>(Entry.class, this,
+					Prototype5Package.ABSTRACT_MESH_COMPONENT__PROPERTIES);
 		}
 		return properties;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EContentAdapter getAdapter() {
@@ -387,13 +414,15 @@ public class AbstractMeshComponentImpl extends VizObjectImpl implements Abstract
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setAdapter(EContentAdapter newAdapter) {
 		EContentAdapter oldAdapter = adapter;
 		adapter = newAdapter;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Prototype5Package.ABSTRACT_MESH_COMPONENT__ADAPTER, oldAdapter, adapter));
+			eNotify(new ENotificationImpl(this, Notification.SET, Prototype5Package.ABSTRACT_MESH_COMPONENT__ADAPTER,
+					oldAdapter, adapter));
 	}
 
 	/**
@@ -513,7 +542,8 @@ public class AbstractMeshComponentImpl extends VizObjectImpl implements Abstract
 			// Send notification that entities have been changed
 			if (eNotificationRequired())
 				eNotify(new ENotificationImpl(this, Notification.SET,
-						Prototype5Package.ABSTRACT_MESH_COMPONENT__ENTITIES, entity, ""));
+						Prototype5Package.ABSTRACT_MESH_COMPONENT__ENTITIES,
+						entity, ""));
 			return;
 		}
 	}
@@ -535,7 +565,7 @@ public class AbstractMeshComponentImpl extends VizObjectImpl implements Abstract
 				continue;
 			}
 
-			// Add the new entitiy to the list
+			// Add the new entity to the list
 			tempCategory.getValue().add(newEntity);
 
 			// Send notification that entities have been changed
@@ -563,144 +593,151 @@ public class AbstractMeshComponentImpl extends VizObjectImpl implements Abstract
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT__TYPE:
-				return getType();
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT__UPDATE_LOCK:
-				return getUpdateLock();
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT__ENTITIES:
-				return getEntities();
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT__PROPERTIES:
-				return getProperties();
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT__ADAPTER:
-				return getAdapter();
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT__TYPE:
+			return getType();
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT__UPDATE_LOCK:
+			return getUpdateLock();
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT__ENTITIES:
+			return getEntities();
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT__PROPERTIES:
+			return getProperties();
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT__ADAPTER:
+			return getAdapter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT__TYPE:
-				setType((MeshType)newValue);
-				return;
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT__UPDATE_LOCK:
-				setUpdateLock((AtomicBoolean)newValue);
-				return;
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT__ENTITIES:
-				getEntities().clear();
-				getEntities().addAll((Collection<? extends Map.Entry<String, EList<VizObject>>>)newValue);
-				return;
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT__PROPERTIES:
-				getProperties().clear();
-				getProperties().addAll((Collection<? extends Map.Entry<String, String>>)newValue);
-				return;
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT__ADAPTER:
-				setAdapter((EContentAdapter)newValue);
-				return;
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT__TYPE:
+			setType((MeshType) newValue);
+			return;
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT__UPDATE_LOCK:
+			setUpdateLock((AtomicBoolean) newValue);
+			return;
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT__ENTITIES:
+			getEntities().clear();
+			getEntities().addAll((Collection<? extends Map.Entry<String, EList<VizObject>>>) newValue);
+			return;
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT__PROPERTIES:
+			getProperties().clear();
+			getProperties().addAll((Collection<? extends Map.Entry<String, String>>) newValue);
+			return;
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT__ADAPTER:
+			setAdapter((EContentAdapter) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT__TYPE:
-				setType(TYPE_EDEFAULT);
-				return;
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT__UPDATE_LOCK:
-				setUpdateLock(UPDATE_LOCK_EDEFAULT);
-				return;
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT__ENTITIES:
-				getEntities().clear();
-				return;
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT__PROPERTIES:
-				getProperties().clear();
-				return;
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT__ADAPTER:
-				setAdapter(ADAPTER_EDEFAULT);
-				return;
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT__TYPE:
+			setType(TYPE_EDEFAULT);
+			return;
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT__UPDATE_LOCK:
+			setUpdateLock(UPDATE_LOCK_EDEFAULT);
+			return;
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT__ENTITIES:
+			getEntities().clear();
+			return;
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT__PROPERTIES:
+			getProperties().clear();
+			return;
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT__ADAPTER:
+			setAdapter(ADAPTER_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT__TYPE:
-				return type != TYPE_EDEFAULT;
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT__UPDATE_LOCK:
-				return UPDATE_LOCK_EDEFAULT == null ? updateLock != null : !UPDATE_LOCK_EDEFAULT.equals(updateLock);
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT__ENTITIES:
-				return entities != null && !entities.isEmpty();
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT__PROPERTIES:
-				return properties != null && !properties.isEmpty();
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT__ADAPTER:
-				return ADAPTER_EDEFAULT == null ? adapter != null : !ADAPTER_EDEFAULT.equals(adapter);
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT__TYPE:
+			return type != TYPE_EDEFAULT;
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT__UPDATE_LOCK:
+			return UPDATE_LOCK_EDEFAULT == null ? updateLock != null : !UPDATE_LOCK_EDEFAULT.equals(updateLock);
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT__ENTITIES:
+			return entities != null && !entities.isEmpty();
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT__PROPERTIES:
+			return properties != null && !properties.isEmpty();
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT__ADAPTER:
+			return ADAPTER_EDEFAULT == null ? adapter != null : !ADAPTER_EDEFAULT.equals(adapter);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT___GET_ENTITIES_BY_CATEGORY__STRING:
-				return getEntitiesByCategory((String)arguments.get(0));
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT___GET_PROPERTY__STRING:
-				return getProperty((String)arguments.get(0));
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT___SET_PROPERTY__STRING_STRING:
-				setProperty((String)arguments.get(0), (String)arguments.get(1));
-				return null;
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT___ADD_ENTITY__VIZOBJECT:
-				addEntity((VizObject)arguments.get(0));
-				return null;
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT___REMOVE_ENTITY__VIZOBJECT:
-				removeEntity((VizObject)arguments.get(0));
-				return null;
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT___ADD_ENTITY_BY_CATEGORY__VIZOBJECT_STRING:
-				addEntityByCategory((VizObject)arguments.get(0), (String)arguments.get(1));
-				return null;
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT___UPDATE__NOTIFICATION:
-				update((Notification)arguments.get(0));
-				return null;
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT___REGISTER__VIZOBJECT:
-				register((VizObject)arguments.get(0));
-				return null;
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT___UNREGISTER__VIZOBJECT:
-				unregister((VizObject)arguments.get(0));
-				return null;
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT___GET_ENTITIES_BY_CATEGORY__STRING:
+			return getEntitiesByCategory((String) arguments.get(0));
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT___GET_PROPERTY__STRING:
+			return getProperty((String) arguments.get(0));
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT___SET_PROPERTY__STRING_STRING:
+			setProperty((String) arguments.get(0), (String) arguments.get(1));
+			return null;
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT___ADD_ENTITY__VIZOBJECT:
+			addEntity((VizObject) arguments.get(0));
+			return null;
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT___REMOVE_ENTITY__VIZOBJECT:
+			removeEntity((VizObject) arguments.get(0));
+			return null;
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT___ADD_ENTITY_BY_CATEGORY__VIZOBJECT_STRING:
+			addEntityByCategory((VizObject) arguments.get(0), (String) arguments.get(1));
+			return null;
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT___UPDATE__NOTIFICATION:
+			update((Notification) arguments.get(0));
+			return null;
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT___REGISTER__VIZOBJECT:
+			register((VizObject) arguments.get(0));
+			return null;
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT___UNREGISTER__VIZOBJECT:
+			unregister((VizObject) arguments.get(0));
+			return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (type: ");

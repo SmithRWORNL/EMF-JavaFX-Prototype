@@ -11,8 +11,7 @@ import prototype5.Shape;
 import prototype5.VizObject;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Shape</b></em>'. <!-- end-user-doc -->
+ * A mesh component representing a shape in a Constructive Solid Geometry tree. 
  *
  * @generated
  */

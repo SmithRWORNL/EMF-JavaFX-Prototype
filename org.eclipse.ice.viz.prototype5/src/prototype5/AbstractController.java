@@ -123,7 +123,7 @@ public interface AbstractController extends EObject {
 	 * 
 	 * @param newEntity The entity to add as a child.
 	 * <!-- end-model-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body=''"
 	 * @generated
 	 */
 	void addEntity(VizObject newEntity);
@@ -422,6 +422,7 @@ public interface AbstractController extends EObject {
 	 * @param notification The message received from the model.
 	 * <!-- end-model-doc -->
 	 * @model notificationDataType="prototype5.Notification"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body=''"
 	 * @generated
 	 */
 	void modelUpdate(Notification notification);
@@ -435,6 +436,7 @@ public interface AbstractController extends EObject {
 	 * @param notification The message received from the view.
 	 * <!-- end-model-doc -->
 	 * @model notificationDataType="prototype5.Notification"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\t// Pass the notification to listeners\r\n\t\tif (eNotificationRequired())\r\n\t\t\teNotify(new ENotificationImpl(this, notification.getEventType(), notification.getFeatureID(null),\r\n\t\t\t\t\tnotification.getOldValue(), notification.getNewValue()));'"
 	 * @generated
 	 */
 	void viewUpdate(Notification notification);

@@ -7,29 +7,28 @@ import prototype5.Prototype5Package;
 import prototype5.Vertex;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Vertex</b></em>'.
- * <!-- end-user-doc -->
+ * A point which specifically serves as the endpoint for one or more Edges. It
+ * maintains each edge it is associated with in its entities map.
  *
  * @generated
  */
 public class VertexImpl extends PointImpl implements Vertex {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected VertexImpl() {
 		super();
 	}
-	
-	public VertexImpl(double x, double y, double z){
+
+	public VertexImpl(double x, double y, double z) {
 		super(x, y, z);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -37,4 +36,4 @@ public class VertexImpl extends PointImpl implements Vertex {
 		return Prototype5Package.Literals.VERTEX;
 	}
 
-} //VertexImpl
+} // VertexImpl

@@ -25,23 +25,38 @@ import prototype5.Transformation;
 import prototype5.VizObject;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Abstract Controller</b></em>'. <!-- end-user-doc -->
+ * A class which is responsible for user interactions with the underlying data
+ * structures which represent a part in a model. An AbstractController is
+ * associated with an AbstractMeshComponent, which is the internal
+ * representation of the part and any associated data, and an AbstractView,
+ * which holds the graphical representation of the object in the native data
+ * types of the rendering engine.
+ * 
+ * The AbstractController is meant to completely encapsulate the functionality
+ * of the part. All client interactions with a part should take place through
+ * function calls to the part's AbstractController, without regard as to whether
+ * they are internally delegated to the model, the view, or both. The controller
+ * should not expose the model or view, or their implementation details, to the
+ * client.
+ * 
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link prototype5.impl.AbstractControllerImpl#getDisposed <em>Disposed</em>}</li>
- *   <li>{@link prototype5.impl.AbstractControllerImpl#getModel <em>Model</em>}</li>
- *   <li>{@link prototype5.impl.AbstractControllerImpl#getView <em>View</em>}</li>
+ * <li>{@link prototype5.impl.AbstractControllerImpl#getDisposed
+ * <em>Disposed</em>}</li>
+ * <li>{@link prototype5.impl.AbstractControllerImpl#getModel <em>Model</em>}
+ * </li>
+ * <li>{@link prototype5.impl.AbstractControllerImpl#getView <em>View</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class AbstractControllerImpl extends MinimalEObjectImpl.Container implements AbstractController {
 	/**
-	 * The default value of the '{@link #getDisposed() <em>Disposed</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The default value of the '{@link #getDisposed() <em>Disposed</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getDisposed()
 	 * @generated
 	 * @ordered
@@ -49,9 +64,8 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 	protected static final AtomicBoolean DISPOSED_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getDisposed() <em>Disposed</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getDisposed()
+	 * Whether or not the AbstractController and its data have been disposed.
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -60,6 +74,7 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * The cached value of the '{@link #getModel() <em>Model</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getModel()
 	 * @generated
 	 * @ordered
@@ -69,6 +84,7 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * The cached value of the '{@link #getView() <em>View</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getView()
 	 * @generated
 	 * @ordered
@@ -77,6 +93,7 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected AbstractControllerImpl() {
@@ -91,7 +108,8 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 	 * @param view
 	 *            The model's view.
 	 */
-	public AbstractControllerImpl(AbstractMeshComponent model, AbstractView view) {
+	public AbstractControllerImpl(AbstractMeshComponent model,
+			AbstractView view) {
 		super();
 
 		// Initialize the class variables
@@ -182,6 +200,7 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -191,6 +210,7 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public AtomicBoolean getDisposed() {
@@ -198,14 +218,16 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Set the the controller as being disposed.
+	 * 
 	 * @generated
 	 */
 	public void setDisposed(AtomicBoolean newDisposed) {
 		AtomicBoolean oldDisposed = disposed;
 		disposed = newDisposed;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Prototype5Package.ABSTRACT_CONTROLLER__DISPOSED, oldDisposed, disposed));
+			eNotify(new ENotificationImpl(this, Notification.SET, Prototype5Package.ABSTRACT_CONTROLLER__DISPOSED,
+					oldDisposed, disposed));
 	}
 
 	/**
@@ -214,6 +236,8 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 	 * @newDisposed Whether or not the controller is disposed.
 	 */
 	public void setDisposed(boolean newDisposed) {
+
+		// Atomically set the controller as disposed
 		boolean oldDisposed = disposed.getAndSet(newDisposed);
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Prototype5Package.ABSTRACT_CONTROLLER__DISPOSED,
@@ -222,15 +246,17 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public AbstractMeshComponent getModel() {
 		if (model != null && model.eIsProxy()) {
-			InternalEObject oldModel = (InternalEObject)model;
-			model = (AbstractMeshComponent)eResolveProxy(oldModel);
+			InternalEObject oldModel = (InternalEObject) model;
+			model = (AbstractMeshComponent) eResolveProxy(oldModel);
 			if (model != oldModel) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Prototype5Package.ABSTRACT_CONTROLLER__MODEL, oldModel, model));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							Prototype5Package.ABSTRACT_CONTROLLER__MODEL, oldModel, model));
 			}
 		}
 		return model;
@@ -238,6 +264,7 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public AbstractMeshComponent basicGetModel() {
@@ -246,26 +273,30 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setModel(AbstractMeshComponent newModel) {
 		AbstractMeshComponent oldModel = model;
 		model = newModel;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Prototype5Package.ABSTRACT_CONTROLLER__MODEL, oldModel, model));
+			eNotify(new ENotificationImpl(this, Notification.SET, Prototype5Package.ABSTRACT_CONTROLLER__MODEL,
+					oldModel, model));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public AbstractView getView() {
 		if (view != null && view.eIsProxy()) {
-			InternalEObject oldView = (InternalEObject)view;
-			view = (AbstractView)eResolveProxy(oldView);
+			InternalEObject oldView = (InternalEObject) view;
+			view = (AbstractView) eResolveProxy(oldView);
 			if (view != oldView) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Prototype5Package.ABSTRACT_CONTROLLER__VIEW, oldView, view));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							Prototype5Package.ABSTRACT_CONTROLLER__VIEW, oldView, view));
 			}
 		}
 		return view;
@@ -273,6 +304,7 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public AbstractView basicGetView() {
@@ -281,13 +313,15 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setView(AbstractView newView) {
 		AbstractView oldView = view;
 		view = newView;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Prototype5Package.ABSTRACT_CONTROLLER__VIEW, oldView, view));
+			eNotify(new ENotificationImpl(this, Notification.SET, Prototype5Package.ABSTRACT_CONTROLLER__VIEW, oldView,
+					view));
 	}
 
 	/**
@@ -534,165 +568,174 @@ public class AbstractControllerImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Prototype5Package.ABSTRACT_CONTROLLER__DISPOSED:
-				return getDisposed();
-			case Prototype5Package.ABSTRACT_CONTROLLER__MODEL:
-				if (resolve) return getModel();
-				return basicGetModel();
-			case Prototype5Package.ABSTRACT_CONTROLLER__VIEW:
-				if (resolve) return getView();
-				return basicGetView();
+		case Prototype5Package.ABSTRACT_CONTROLLER__DISPOSED:
+			return getDisposed();
+		case Prototype5Package.ABSTRACT_CONTROLLER__MODEL:
+			if (resolve)
+				return getModel();
+			return basicGetModel();
+		case Prototype5Package.ABSTRACT_CONTROLLER__VIEW:
+			if (resolve)
+				return getView();
+			return basicGetView();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Prototype5Package.ABSTRACT_CONTROLLER__DISPOSED:
-				setDisposed((AtomicBoolean)newValue);
-				return;
-			case Prototype5Package.ABSTRACT_CONTROLLER__MODEL:
-				setModel((AbstractMeshComponent)newValue);
-				return;
-			case Prototype5Package.ABSTRACT_CONTROLLER__VIEW:
-				setView((AbstractView)newValue);
-				return;
+		case Prototype5Package.ABSTRACT_CONTROLLER__DISPOSED:
+			setDisposed((AtomicBoolean) newValue);
+			return;
+		case Prototype5Package.ABSTRACT_CONTROLLER__MODEL:
+			setModel((AbstractMeshComponent) newValue);
+			return;
+		case Prototype5Package.ABSTRACT_CONTROLLER__VIEW:
+			setView((AbstractView) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Prototype5Package.ABSTRACT_CONTROLLER__DISPOSED:
-				setDisposed(DISPOSED_EDEFAULT);
-				return;
-			case Prototype5Package.ABSTRACT_CONTROLLER__MODEL:
-				setModel((AbstractMeshComponent)null);
-				return;
-			case Prototype5Package.ABSTRACT_CONTROLLER__VIEW:
-				setView((AbstractView)null);
-				return;
+		case Prototype5Package.ABSTRACT_CONTROLLER__DISPOSED:
+			setDisposed(DISPOSED_EDEFAULT);
+			return;
+		case Prototype5Package.ABSTRACT_CONTROLLER__MODEL:
+			setModel((AbstractMeshComponent) null);
+			return;
+		case Prototype5Package.ABSTRACT_CONTROLLER__VIEW:
+			setView((AbstractView) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Prototype5Package.ABSTRACT_CONTROLLER__DISPOSED:
-				return DISPOSED_EDEFAULT == null ? disposed != null : !DISPOSED_EDEFAULT.equals(disposed);
-			case Prototype5Package.ABSTRACT_CONTROLLER__MODEL:
-				return model != null;
-			case Prototype5Package.ABSTRACT_CONTROLLER__VIEW:
-				return view != null;
+		case Prototype5Package.ABSTRACT_CONTROLLER__DISPOSED:
+			return DISPOSED_EDEFAULT == null ? disposed != null : !DISPOSED_EDEFAULT.equals(disposed);
+		case Prototype5Package.ABSTRACT_CONTROLLER__MODEL:
+			return model != null;
+		case Prototype5Package.ABSTRACT_CONTROLLER__VIEW:
+			return view != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case Prototype5Package.ABSTRACT_CONTROLLER___ADD_ENTITY__VIZOBJECT:
-				addEntity((VizObject)arguments.get(0));
-				return null;
-			case Prototype5Package.ABSTRACT_CONTROLLER___DISPOSE:
-				dispose();
-				return null;
-			case Prototype5Package.ABSTRACT_CONTROLLER___GET_ENTITIES:
-				return getEntities();
-			case Prototype5Package.ABSTRACT_CONTROLLER___GET_ENTITIES_BY_CATEGORY__STRING:
-				return getEntitiesByCategory((String)arguments.get(0));
-			case Prototype5Package.ABSTRACT_CONTROLLER___GET_PREVIOUS_TRANSFORMATION:
-				return getPreviousTransformation();
-			case Prototype5Package.ABSTRACT_CONTROLLER___GET_PROPERTY__STRING:
-				return getProperty((String)arguments.get(0));
-			case Prototype5Package.ABSTRACT_CONTROLLER___GET_REPRESENTATION:
-				return getRepresentation();
-			case Prototype5Package.ABSTRACT_CONTROLLER___GET_ROTATION:
-				return getRotation();
-			case Prototype5Package.ABSTRACT_CONTROLLER___GET_SCALE:
-				return getScale();
-			case Prototype5Package.ABSTRACT_CONTROLLER___GET_SIZE:
-				return getSize();
-			case Prototype5Package.ABSTRACT_CONTROLLER___GET_SKEW:
-				return getSkew();
-			case Prototype5Package.ABSTRACT_CONTROLLER___GET_TRANSFORMATION:
-				return getTransformation();
-			case Prototype5Package.ABSTRACT_CONTROLLER___GET_TRANSLATION:
-				return getTranslation();
-			case Prototype5Package.ABSTRACT_CONTROLLER___REMOVE_ENTITY__VIZOBJECT:
-				removeEntity((VizObject)arguments.get(0));
-				return null;
-			case Prototype5Package.ABSTRACT_CONTROLLER___SET_PROPERTY__STRING_STRING:
-				setProperty((String)arguments.get(0), (String)arguments.get(1));
-				return null;
-			case Prototype5Package.ABSTRACT_CONTROLLER___SET_ROTATION__DOUBLE_DOUBLE_DOUBLE:
-				setRotation((Double)arguments.get(0), (Double)arguments.get(1), (Double)arguments.get(2));
-				return null;
-			case Prototype5Package.ABSTRACT_CONTROLLER___SET_SCALE__DOUBLE_DOUBLE_DOUBLE:
-				setScale((Double)arguments.get(0), (Double)arguments.get(1), (Double)arguments.get(2));
-				return null;
-			case Prototype5Package.ABSTRACT_CONTROLLER___SET_SIZE__DOUBLE:
-				setSize((Double)arguments.get(0));
-				return null;
-			case Prototype5Package.ABSTRACT_CONTROLLER___SET_SKEW__DOUBLE_DOUBLE_DOUBLE:
-				setSkew((Double)arguments.get(0), (Double)arguments.get(1), (Double)arguments.get(2));
-				return null;
-			case Prototype5Package.ABSTRACT_CONTROLLER___SET_TRANSFORMATION__TRANSFORMATION:
-				setTransformation((Transformation)arguments.get(0));
-				return null;
-			case Prototype5Package.ABSTRACT_CONTROLLER___SET_TRANSLATION__DOUBLE_DOUBLE_DOUBLE:
-				setTranslation((Double)arguments.get(0), (Double)arguments.get(1), (Double)arguments.get(2));
-				return null;
-			case Prototype5Package.ABSTRACT_CONTROLLER___ADD_ENTITY_BY_CATEGORY__VIZOBJECT_STRING:
-				addEntityByCategory((VizObject)arguments.get(0), (String)arguments.get(1));
-				return null;
-			case Prototype5Package.ABSTRACT_CONTROLLER___MODEL_UPDATE__NOTIFICATION:
-				modelUpdate((Notification)arguments.get(0));
-				return null;
-			case Prototype5Package.ABSTRACT_CONTROLLER___VIEW_UPDATE__NOTIFICATION:
-				viewUpdate((Notification)arguments.get(0));
-				return null;
-			case Prototype5Package.ABSTRACT_CONTROLLER___REFRESH:
-				refresh();
-				return null;
-			case Prototype5Package.ABSTRACT_CONTROLLER___SYNCHED:
-				synched();
-				return null;
+		case Prototype5Package.ABSTRACT_CONTROLLER___ADD_ENTITY__VIZOBJECT:
+			addEntity((VizObject) arguments.get(0));
+			return null;
+		case Prototype5Package.ABSTRACT_CONTROLLER___DISPOSE:
+			dispose();
+			return null;
+		case Prototype5Package.ABSTRACT_CONTROLLER___GET_ENTITIES:
+			return getEntities();
+		case Prototype5Package.ABSTRACT_CONTROLLER___GET_ENTITIES_BY_CATEGORY__STRING:
+			return getEntitiesByCategory((String) arguments.get(0));
+		case Prototype5Package.ABSTRACT_CONTROLLER___GET_PREVIOUS_TRANSFORMATION:
+			return getPreviousTransformation();
+		case Prototype5Package.ABSTRACT_CONTROLLER___GET_PROPERTY__STRING:
+			return getProperty((String) arguments.get(0));
+		case Prototype5Package.ABSTRACT_CONTROLLER___GET_REPRESENTATION:
+			return getRepresentation();
+		case Prototype5Package.ABSTRACT_CONTROLLER___GET_ROTATION:
+			return getRotation();
+		case Prototype5Package.ABSTRACT_CONTROLLER___GET_SCALE:
+			return getScale();
+		case Prototype5Package.ABSTRACT_CONTROLLER___GET_SIZE:
+			return getSize();
+		case Prototype5Package.ABSTRACT_CONTROLLER___GET_SKEW:
+			return getSkew();
+		case Prototype5Package.ABSTRACT_CONTROLLER___GET_TRANSFORMATION:
+			return getTransformation();
+		case Prototype5Package.ABSTRACT_CONTROLLER___GET_TRANSLATION:
+			return getTranslation();
+		case Prototype5Package.ABSTRACT_CONTROLLER___REMOVE_ENTITY__VIZOBJECT:
+			removeEntity((VizObject) arguments.get(0));
+			return null;
+		case Prototype5Package.ABSTRACT_CONTROLLER___SET_PROPERTY__STRING_STRING:
+			setProperty((String) arguments.get(0), (String) arguments.get(1));
+			return null;
+		case Prototype5Package.ABSTRACT_CONTROLLER___SET_ROTATION__DOUBLE_DOUBLE_DOUBLE:
+			setRotation((Double) arguments.get(0), (Double) arguments.get(1), (Double) arguments.get(2));
+			return null;
+		case Prototype5Package.ABSTRACT_CONTROLLER___SET_SCALE__DOUBLE_DOUBLE_DOUBLE:
+			setScale((Double) arguments.get(0), (Double) arguments.get(1), (Double) arguments.get(2));
+			return null;
+		case Prototype5Package.ABSTRACT_CONTROLLER___SET_SIZE__DOUBLE:
+			setSize((Double) arguments.get(0));
+			return null;
+		case Prototype5Package.ABSTRACT_CONTROLLER___SET_SKEW__DOUBLE_DOUBLE_DOUBLE:
+			setSkew((Double) arguments.get(0), (Double) arguments.get(1), (Double) arguments.get(2));
+			return null;
+		case Prototype5Package.ABSTRACT_CONTROLLER___SET_TRANSFORMATION__TRANSFORMATION:
+			setTransformation((Transformation) arguments.get(0));
+			return null;
+		case Prototype5Package.ABSTRACT_CONTROLLER___SET_TRANSLATION__DOUBLE_DOUBLE_DOUBLE:
+			setTranslation((Double) arguments.get(0), (Double) arguments.get(1), (Double) arguments.get(2));
+			return null;
+		case Prototype5Package.ABSTRACT_CONTROLLER___ADD_ENTITY_BY_CATEGORY__VIZOBJECT_STRING:
+			addEntityByCategory((VizObject) arguments.get(0), (String) arguments.get(1));
+			return null;
+		case Prototype5Package.ABSTRACT_CONTROLLER___MODEL_UPDATE__NOTIFICATION:
+			modelUpdate((Notification) arguments.get(0));
+			return null;
+		case Prototype5Package.ABSTRACT_CONTROLLER___VIEW_UPDATE__NOTIFICATION:
+			viewUpdate((Notification) arguments.get(0));
+			return null;
+		case Prototype5Package.ABSTRACT_CONTROLLER___REFRESH:
+			refresh();
+			return null;
+		case Prototype5Package.ABSTRACT_CONTROLLER___SYNCHED:
+			synched();
+			return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (disposed: ");

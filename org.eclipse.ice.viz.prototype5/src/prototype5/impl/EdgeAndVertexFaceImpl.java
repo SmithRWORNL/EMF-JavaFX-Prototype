@@ -2,6 +2,7 @@
  */
 package prototype5.impl;
 
+import java.util.List;
 import java.util.Map.Entry;
 
 import org.eclipse.emf.common.util.EList;
@@ -13,18 +14,28 @@ import prototype5.Prototype5Package;
 import prototype5.VizObject;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Edge And Vertex Face</b></em>'. <!-- end-user-doc -->
+ * A Face which keeps both its Edges and Vertices as its child entities.
  *
  * @generated
  */
-public class EdgeAndVertexFaceImpl extends FaceImpl implements EdgeAndVertexFace {
+public class EdgeAndVertexFaceImpl extends FaceImpl
+		implements EdgeAndVertexFace {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	protected EdgeAndVertexFaceImpl() {
+	public EdgeAndVertexFaceImpl() {
 		super();
+	}
+
+	/**
+	 * A constructor taking a list of entities.
+	 * 
+	 * @param entities
+	 */
+	public EdgeAndVertexFaceImpl(List<VizObject> entities) {
+		super(entities);
 	}
 
 	/**
@@ -44,24 +55,25 @@ public class EdgeAndVertexFaceImpl extends FaceImpl implements EdgeAndVertexFace
 
 			// Add each of its vertices under the "Vertices" category
 			for (VizObject vertex : edge.getEntitiesByCategory("Default")) {
-				
-				//Track whether the Vertices entry was found.
+
+				// Track whether the Vertices entry was found.
 				boolean found = false;
-				
-				//Find the Vertices entry
+
+				// Find the Vertices entry
 				for (Entry<String, EList<VizObject>> entry : entities) {
 					if (entry.getKey() == "Vertices") {
 						found = true;
-						
-						//If the vertex isn't already inside, add it
+
+						// If the vertex isn't already inside, add it
 						if (!(entry.getValue().contains(vertex))) {
 							addEntityByCategory(vertex, "Vertices");
 						}
 					}
 				}
-				
-				//If there was no Vertices category, create it and add the vertex.
-				if (!found){
+
+				// If there was no Vertices category, create it and add the
+				// vertex.
+				if (!found) {
 					addEntityByCategory(vertex, "Vertices");
 				}
 			}
@@ -71,6 +83,7 @@ public class EdgeAndVertexFaceImpl extends FaceImpl implements EdgeAndVertexFace
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

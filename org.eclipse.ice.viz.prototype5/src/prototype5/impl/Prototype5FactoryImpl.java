@@ -22,35 +22,36 @@ import org.eclipse.emf.ecore.util.EContentAdapter;
 import prototype5.*;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Factory</b>.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
+ * end-user-doc -->
+ * 
  * @generated
  */
-public class Prototype5FactoryImpl extends EFactoryImpl implements Prototype5Factory {
+public class Prototype5FactoryImpl extends EFactoryImpl
+		implements Prototype5Factory {
 	/**
-	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Creates the default factory implementation. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static Prototype5Factory init() {
 		try {
-			Prototype5Factory thePrototype5Factory = (Prototype5Factory)EPackage.Registry.INSTANCE.getEFactory(Prototype5Package.eNS_URI);
+			Prototype5Factory thePrototype5Factory = (Prototype5Factory) EPackage.Registry.INSTANCE
+					.getEFactory(Prototype5Package.eNS_URI);
 			if (thePrototype5Factory != null) {
 				return thePrototype5Factory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new Prototype5FactoryImpl();
 	}
 
 	/**
-	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Creates an instance of the factory. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Prototype5FactoryImpl() {
@@ -58,85 +59,106 @@ public class Prototype5FactoryImpl extends EFactoryImpl implements Prototype5Fac
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case Prototype5Package.FACE: return createFace();
-			case Prototype5Package.SHAPE: return createShape();
-			case Prototype5Package.ELEMENT: return createElement();
-			case Prototype5Package.VERTEX: return createVertex();
-			case Prototype5Package.EDGE: return createEdge();
-			case Prototype5Package.VIZ_OBJECT: return createVizObject();
-			case Prototype5Package.ABSTRACT_VIEW: return createAbstractView();
-			case Prototype5Package.ESTRING_TO_ESTRING_MAP: return (EObject)createEStringToEStringMap();
-			case Prototype5Package.ESTRING_TO_VIZ_OBJECT_MAP: return (EObject)createEStringToVizObjectMap();
-			case Prototype5Package.TRANSFORMATION: return createTransformation();
-			case Prototype5Package.POINT: return createPoint();
-			case Prototype5Package.ABSTRACT_MESH_COMPONENT: return createAbstractMeshComponent();
-			case Prototype5Package.ABSTRACT_CONTROLLER: return createAbstractController();
-			case Prototype5Package.JAVA_FX_VIEW: return createJavaFXView();
-			case Prototype5Package.JAVA_FX_MESH_COMPONENT: return createJavaFXMeshComponent();
-			case Prototype5Package.JAVA_FX_CONTROLLER: return createJavaFXController();
-			case Prototype5Package.JAVA_FX_CONTROLLER_FACTORY: return createJavaFXControllerFactory();
-			case Prototype5Package.EDGE_AND_VERTEX_FACE: return createEdgeAndVertexFace();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case Prototype5Package.FACE:
+			return createFace();
+		case Prototype5Package.SHAPE:
+			return createShape();
+		case Prototype5Package.ELEMENT:
+			return createElement();
+		case Prototype5Package.VERTEX:
+			return createVertex();
+		case Prototype5Package.EDGE:
+			return createEdge();
+		case Prototype5Package.VIZ_OBJECT:
+			return createVizObject();
+		case Prototype5Package.ABSTRACT_VIEW:
+			return createAbstractView();
+		case Prototype5Package.ESTRING_TO_ESTRING_MAP:
+			return (EObject) createEStringToEStringMap();
+		case Prototype5Package.ESTRING_TO_VIZ_OBJECT_MAP:
+			return (EObject) createEStringToVizObjectMap();
+		case Prototype5Package.TRANSFORMATION:
+			return createTransformation();
+		case Prototype5Package.POINT:
+			return createPoint();
+		case Prototype5Package.ABSTRACT_MESH_COMPONENT:
+			return createAbstractMeshComponent();
+		case Prototype5Package.ABSTRACT_CONTROLLER:
+			return createAbstractController();
+		case Prototype5Package.JAVA_FX_VIEW:
+			return createJavaFXView();
+		case Prototype5Package.JAVA_FX_MESH_COMPONENT:
+			return createJavaFXMeshComponent();
+		case Prototype5Package.JAVA_FX_CONTROLLER:
+			return createJavaFXController();
+		case Prototype5Package.JAVA_FX_CONTROLLER_FACTORY:
+			return createJavaFXControllerFactory();
+		case Prototype5Package.EDGE_AND_VERTEX_FACE:
+			return createEdgeAndVertexFace();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName()
+					+ "' is not a valid classifier");
 		}
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case Prototype5Package.MESH_TYPE:
-				return createMeshTypeFromString(eDataType, initialValue);
-			case Prototype5Package.ATOMIC_BOOLEAN:
-				return createAtomicBooleanFromString(eDataType, initialValue);
-			case Prototype5Package.NOTIFICATION:
-				return createNotificationFromString(eDataType, initialValue);
-			case Prototype5Package.ECONTENT_ADAPTER:
-				return createEContentAdapterFromString(eDataType, initialValue);
-			case Prototype5Package.OBJECT:
-				return createObjectFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case Prototype5Package.MESH_TYPE:
+			return createMeshTypeFromString(eDataType, initialValue);
+		case Prototype5Package.ATOMIC_BOOLEAN:
+			return createAtomicBooleanFromString(eDataType, initialValue);
+		case Prototype5Package.NOTIFICATION:
+			return createNotificationFromString(eDataType, initialValue);
+		case Prototype5Package.ECONTENT_ADAPTER:
+			return createEContentAdapterFromString(eDataType, initialValue);
+		case Prototype5Package.OBJECT:
+			return createObjectFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '"
+					+ eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case Prototype5Package.MESH_TYPE:
-				return convertMeshTypeToString(eDataType, instanceValue);
-			case Prototype5Package.ATOMIC_BOOLEAN:
-				return convertAtomicBooleanToString(eDataType, instanceValue);
-			case Prototype5Package.NOTIFICATION:
-				return convertNotificationToString(eDataType, instanceValue);
-			case Prototype5Package.ECONTENT_ADAPTER:
-				return convertEContentAdapterToString(eDataType, instanceValue);
-			case Prototype5Package.OBJECT:
-				return convertObjectToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case Prototype5Package.MESH_TYPE:
+			return convertMeshTypeToString(eDataType, instanceValue);
+		case Prototype5Package.ATOMIC_BOOLEAN:
+			return convertAtomicBooleanToString(eDataType, instanceValue);
+		case Prototype5Package.NOTIFICATION:
+			return convertNotificationToString(eDataType, instanceValue);
+		case Prototype5Package.ECONTENT_ADAPTER:
+			return convertEContentAdapterToString(eDataType, instanceValue);
+		case Prototype5Package.OBJECT:
+			return convertObjectToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '"
+					+ eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Face createFace() {
@@ -145,8 +167,8 @@ public class Prototype5FactoryImpl extends EFactoryImpl implements Prototype5Fac
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Shape createShape() {
@@ -155,8 +177,8 @@ public class Prototype5FactoryImpl extends EFactoryImpl implements Prototype5Fac
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Element createElement() {
@@ -165,8 +187,8 @@ public class Prototype5FactoryImpl extends EFactoryImpl implements Prototype5Fac
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Vertex createVertex() {
@@ -175,8 +197,8 @@ public class Prototype5FactoryImpl extends EFactoryImpl implements Prototype5Fac
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Edge createEdge() {
@@ -185,8 +207,8 @@ public class Prototype5FactoryImpl extends EFactoryImpl implements Prototype5Fac
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public VizObject createVizObject() {
@@ -195,8 +217,8 @@ public class Prototype5FactoryImpl extends EFactoryImpl implements Prototype5Fac
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public AbstractView createAbstractView() {
@@ -205,8 +227,8 @@ public class Prototype5FactoryImpl extends EFactoryImpl implements Prototype5Fac
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Map.Entry<String, String> createEStringToEStringMap() {
@@ -215,8 +237,8 @@ public class Prototype5FactoryImpl extends EFactoryImpl implements Prototype5Fac
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Map.Entry<String, EList<VizObject>> createEStringToVizObjectMap() {
@@ -225,8 +247,8 @@ public class Prototype5FactoryImpl extends EFactoryImpl implements Prototype5Fac
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Transformation createTransformation() {
@@ -235,8 +257,8 @@ public class Prototype5FactoryImpl extends EFactoryImpl implements Prototype5Fac
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Point createPoint() {
@@ -245,8 +267,8 @@ public class Prototype5FactoryImpl extends EFactoryImpl implements Prototype5Fac
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public AbstractMeshComponent createAbstractMeshComponent() {
@@ -255,8 +277,8 @@ public class Prototype5FactoryImpl extends EFactoryImpl implements Prototype5Fac
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public AbstractController createAbstractController() {
@@ -265,8 +287,8 @@ public class Prototype5FactoryImpl extends EFactoryImpl implements Prototype5Fac
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public JavaFXView createJavaFXView() {
@@ -275,8 +297,8 @@ public class Prototype5FactoryImpl extends EFactoryImpl implements Prototype5Fac
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public JavaFXMeshComponent createJavaFXMeshComponent() {
@@ -285,8 +307,8 @@ public class Prototype5FactoryImpl extends EFactoryImpl implements Prototype5Fac
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public JavaFXController createJavaFXController() {
@@ -295,8 +317,8 @@ public class Prototype5FactoryImpl extends EFactoryImpl implements Prototype5Fac
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public JavaFXControllerFactory createJavaFXControllerFactory() {
@@ -305,8 +327,8 @@ public class Prototype5FactoryImpl extends EFactoryImpl implements Prototype5Fac
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EdgeAndVertexFace createEdgeAndVertexFace() {
@@ -315,109 +337,123 @@ public class Prototype5FactoryImpl extends EFactoryImpl implements Prototype5Fac
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public MeshType createMeshTypeFromString(EDataType eDataType, String initialValue) {
+	public MeshType createMeshTypeFromString(EDataType eDataType,
+			String initialValue) {
 		MeshType result = MeshType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue
+					+ "' is not a valid enumerator of '" + eDataType.getName()
+					+ "'");
 		return result;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public String convertMeshTypeToString(EDataType eDataType, Object instanceValue) {
+	public String convertMeshTypeToString(EDataType eDataType,
+			Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public AtomicBoolean createAtomicBooleanFromString(EDataType eDataType, String initialValue) {
-		return (AtomicBoolean)super.createFromString(eDataType, initialValue);
+	public AtomicBoolean createAtomicBooleanFromString(EDataType eDataType,
+			String initialValue) {
+		return (AtomicBoolean) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public String convertAtomicBooleanToString(EDataType eDataType, Object instanceValue) {
+	public String convertAtomicBooleanToString(EDataType eDataType,
+			Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public Notification createNotificationFromString(EDataType eDataType, String initialValue) {
-		return (Notification)super.createFromString(eDataType, initialValue);
+	public Notification createNotificationFromString(EDataType eDataType,
+			String initialValue) {
+		return (Notification) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public String convertNotificationToString(EDataType eDataType, Object instanceValue) {
+	public String convertNotificationToString(EDataType eDataType,
+			Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public EContentAdapter createEContentAdapterFromString(EDataType eDataType, String initialValue) {
-		return (EContentAdapter)super.createFromString(eDataType, initialValue);
+	public EContentAdapter createEContentAdapterFromString(EDataType eDataType,
+			String initialValue) {
+		return (EContentAdapter) super.createFromString(eDataType,
+				initialValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public String convertEContentAdapterToString(EDataType eDataType, Object instanceValue) {
+	public String convertEContentAdapterToString(EDataType eDataType,
+			Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public Object createObjectFromString(EDataType eDataType, String initialValue) {
+	public Object createObjectFromString(EDataType eDataType,
+			String initialValue) {
 		return super.createFromString(eDataType, initialValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public String convertObjectToString(EDataType eDataType, Object instanceValue) {
+	public String convertObjectToString(EDataType eDataType,
+			Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Prototype5Package getPrototype5Package() {
-		return (Prototype5Package)getEPackage();
+		return (Prototype5Package) getEPackage();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -426,4 +462,4 @@ public class Prototype5FactoryImpl extends EFactoryImpl implements Prototype5Fac
 		return Prototype5Package.eINSTANCE;
 	}
 
-} //Prototype5FactoryImpl
+} // Prototype5FactoryImpl
